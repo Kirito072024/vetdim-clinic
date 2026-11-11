@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Звіт з навчальної практики — ВетДім</title>
+<style>
+  @page { size: A4; margin: 20mm 15mm 20mm 30mm; }
+  html { font-family: "Times New Roman", Times, serif; font-size: 14pt; line-height: 1.5; color: #000; }
+  body { margin: 0; }
+  h1, h2, h3 { font-weight: bold; line-height: 1.3; page-break-after: avoid; break-after: avoid; }
+  h1 { font-size: 16pt; text-align: center; text-transform: uppercase; margin: 0 0 12pt; }
+  h2 { font-size: 14pt; margin: 14pt 0 6pt; }
+  h3 { font-size: 14pt; font-style: italic; margin: 10pt 0 4pt; }
+  p { margin: 0; text-indent: 12.5mm; text-align: justify; }
+  p.noindent, .center p { text-indent: 0; }
+  ul, ol { margin: 0 0 0 12.5mm; padding: 0 0 0 6mm; text-align: justify; }
+  .chapter { break-before: page; }
+  .center { text-align: center; }
+  table { width: 100%; border-collapse: collapse; margin: 6pt 0 10pt; font-size: 12pt; line-height: 1.25; break-inside: auto; }
+  th, td { border: 1px solid #000; padding: 3pt 5pt; vertical-align: top; text-align: left; }
+  th { background: #eee; }
+  td.c, th.c { text-align: center; }
+  caption { caption-side: top; text-align: left; font-size: 14pt; padding-bottom: 4pt; }
+  pre { font-family: "Consolas", "Courier New", monospace; font-size: 10.5pt; line-height: 1.25; border: 1px solid #999; background: #f6f6f6; padding: 6pt 8pt; margin: 6pt 0 4pt; white-space: pre-wrap; break-inside: avoid; }
+  code { font-family: "Consolas", "Courier New", monospace; font-size: 11pt; }
+  figure { margin: 8pt 0; text-align: center; break-inside: avoid; }
+  figure img { max-width: 100%; border: 1px solid #999; }
+  figcaption { font-size: 14pt; margin-top: 4pt; }
+  .listing { text-indent: 0; font-size: 14pt; margin-top: 6pt; }
+  .crop { overflow: hidden; display: inline-block; border: 1px solid #999; }
+  .crop img { border: 0; display: block; }
+  /* Титульний аркуш */
+  .title { height: 252mm; display: flex; flex-direction: column; text-align: center; }
+  .title p { text-indent: 0; text-align: center; }
+  .title .spacer { flex: 1; }
+  .title .right { align-self: flex-end; text-align: left; width: 90mm; }
+  .title .right p { text-align: left; }
+  .toc { list-style: none; margin: 0; padding: 0; }
+  .toc li { display: flex; gap: 4pt; }
+  .toc li span:nth-child(2) { flex: 1; border-bottom: 1px dotted #000; margin-bottom: 6pt; }
+  .toc .sub { padding-left: 8mm; }
+  .qr { display: flex; justify-content: space-around; text-align: center; margin-top: 10pt; }
+  .qr img { width: 50mm; height: 50mm; border: 0; }
+  .two { display: flex; gap: 6mm; justify-content: center; align-items: flex-start; }
+</style>
+</head>
+<body>
+
+<!-- ============ ТИТУЛЬНИЙ АРКУШ ============ -->
+<section class="title">
+  <p>МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ</p>
+  <p>____________________________________________</p>
+  <p><small>(назва коледжу — за зразком)</small></p>
+  <p>Відділення ___________________________</p>
+  <div class="spacer"></div>
+  <p><b>ЗВІТ</b></p>
+  <p><b>з навчальної практики</b></p>
+  <p><b>«WEB-технології та WEB-дизайн»</b></p>
+  <p>на тему: <b>«Веб-сайт ветеринарної клініки «ВетДім» з онлайн-записом на прийом»</b></p>
+  <div class="spacer"></div>
+  <div class="right">
+    <p>Виконав(ла): студент(ка) групи _______</p>
+    <p>____________________________</p>
+    <p><small>(прізвище, ім'я, по батькові)</small></p>
+    <p style="margin-top:12pt">Керівник практики:</p>
+    <p>____________________________</p>
+    <p style="margin-top:12pt">Оцінка: ____________________</p>
+  </div>
+  <div class="spacer"></div>
+  <p>2026</p>
+</section>
+
+<!-- ============ ЗМІСТ ============ -->
+<section class="chapter">
+  <h1>Зміст</h1>
+  <ul class="toc">
+    <li><span>Вступ</span><span></span><span>3</span></li>
+    <li><span>Розділ 1. Аналіз предметної області та технічне завдання</span><span></span><span>4</span></li>
+    <li><span>Розділ 2. UX/UI-проєктування</span><span></span><span>6</span></li>
+    <li><span>Розділ 3. Розробка клієнтської частини</span><span></span><span>9</span></li>
+    <li><span>Розділ 4. Серверна частина та API</span><span></span><span>12</span></li>
+    <li><span>Розділ 5. Тестування, оптимізація, деплой</span><span></span><span>14</span></li>
+    <li><span>Використання AI-інструментів</span><span></span><span>16</span></li>
+    <li><span>Висновки</span><span></span><span>17</span></li>
+    <li><span>Список джерел</span><span></span><span>18</span></li>
+    <li><span>Додатки</span><span></span><span>19</span></li>
+  </ul>
+</section>
+
+<!-- ============ ВСТУП ============ -->
+<section class="chapter">
+  <h1>Вступ</h1>
+  <p><b>Мета практики</b> — набути практичних навичок повного циклу створення веб-проєкту: від технічного завдання і проєктування інтерфейсу до розробки клієнтської та серверної частин, тестування й публікації сайту в інтернеті.</p>
+  <p><b>Завдання практики:</b></p>
+  <ul>
+    <li>скласти технічне завдання та беклог задач, організувати репозиторій Git/GitHub;</li>
+    <li>провести UX-аналіз: персони, user stories, user flow, wireframe;</li>
+    <li>розробити дизайн-систему та макети для desktop і mobile;</li>
+    <li>зверстати семантичну адаптивну розмітку, додати інтерактивність на JavaScript;</li>
+    <li>створити React-версію проєкту на Vite з маршрутизацією;</li>
+    <li>розробити REST API на Node.js (Express) і підключити його до клієнта;</li>
+    <li>протестувати сайт, досягти показників Lighthouse ≥ 90, опублікувати сайт з автодеплоєм.</li>
+  </ul>
+  <p><b>Тема проєкту</b> (варіант 2) — веб-сайт ветеринарної клініки «ВетДім». Ключові сутності — <i>лікар</i> і <i>послуга</i>, цільова дія — <i>запис на прийом із вибором лікаря</i>.</p>
+  <p><b>Актуальність.</b> Більшість невеликих ветеринарних клінік досі записують пацієнтів лише телефоном. Власникові тварини доводиться телефонувати в робочий час, чекати на лінії й навмання обирати лікаря, не знаючи його спеціалізації та вільного часу. Онлайн-запис із вибором конкретного лікаря та вільного слоту знімає ці проблеми, а для клініки зменшує навантаження на реєстратуру й кількість пропущених дзвінків. Понад 60 % користувачів шукають такі послуги зі смартфона, тому сайт проєктувався за принципом mobile-first.</p>
+  <p><b>Результат практики:</b> опублікований сайт з React-фронтендом і Express-API, репозиторій з понад 70 змістовними комітами, документація, тести та цей звіт.</p>
+</section>
+
+<!-- ============ РОЗДІЛ 1 ============ -->
+<section class="chapter">
+  <h1>Розділ 1. Аналіз предметної області та технічне завдання</h1>
+  <h2>1.1 Аналіз предметної області</h2>
+  <p>Користувачами сайту є власники домашніх тварин двох основних типів: молоді люди, які користуються переважно смартфоном і цінують швидкість, та люди старшого віку, для яких важливі зрозумілість, великі шрифти й можливість потрапити до «свого» лікаря. Аналіз сайтів ветеринарних клінік і медичних сервісів онлайн-запису показав типові проблеми: відсутність інформації про вільний час, довгі форми без валідації, неадаптовані під мобільні пристрої сторінки, відсутність інформації про спеціалізацію лікарів.</p>
+  <p>Звідси головні вимоги: каталог лікарів зі спеціалізаціями, прозорі ціни на послуги, покрокова форма запису, в якій показуються лише вільні слоти обраного лікаря, і швидка робота на мобільному.</p>
+
+  <h2>1.2 Технічне завдання</h2>
+  <p>Технічне завдання оформлене у файлі <code>docs/TZ.md</code>. Структура сайту наведена в таблиці 1.1.</p>
+  <table>
+    <caption>Таблиця 1.1 — Структура сайту</caption>
+    <tr><th>Сторінка</th><th>URL</th><th>Призначення</th></tr>
+    <tr><td>Головна</td><td><code>/</code></td><td>Переваги клініки, популярні послуги, лікарі, заклик до запису</td></tr>
+    <tr><td>Лікарі (каталог)</td><td><code>/doctors</code></td><td>Список лікарів, фільтр за спеціалізацією, пошук</td></tr>
+    <tr><td>Сторінка лікаря</td><td><code>/doctors/:id</code></td><td>Досвід, освіта, послуги, графік, кнопка запису</td></tr>
+    <tr><td>Послуги</td><td><code>/services</code></td><td>Послуги з цінами, фільтр за категорією</td></tr>
+    <tr><td>Запис (форма)</td><td><code>/booking</code></td><td>Послуга → лікар → дата і час → дані власника</td></tr>
+    <tr><td>Контакти</td><td><code>/contacts</code></td><td>Адреса, телефон, графік, форма зворотного зв'язку</td></tr>
+    <tr><td>404</td><td><code>*</code></td><td>Сторінку не знайдено</td></tr>
+  </table>
+  <p>Основні функціональні вимоги: фільтрація й пошук лікарів; детальна сторінка лікаря; перехід до запису з уже обраним лікарем чи послугою; покрокова форма, у якій лікарі фільтруються за обраною послугою; недоступність неробочих днів і зайнятих слотів; валідація на клієнті та сервері; екран підтвердження з номером запису; темна тема; бургер-меню.</p>
+  <p>Нефункціональні вимоги: mobile-first верстка (360, 768, 1280 px), Lighthouse ≥ 90 у чотирьох категоріях, валідний HTML, доступність за WCAG AA, інтерфейс українською мовою.</p>
+  <table>
+    <caption>Таблиця 1.2 — Технологічний стек</caption>
+    <tr><th>Шар</th><th>Технології</th></tr>
+    <tr><td>Проєктування</td><td>HTML-wireframe, дизайн-система на CSS-токенах</td></tr>
+    <tr><td>Фронтенд</td><td>HTML5, CSS3, JavaScript (ES-модулі), React 19, React Router 7, Vite 8</td></tr>
+    <tr><td>Бекенд</td><td>Node.js, Express 5, зберігання в JSON-файлах</td></tr>
+    <tr><td>Тестування</td><td>node:test, Puppeteer, Lighthouse, W3C Validator</td></tr>
+    <tr><td>Деплой</td><td>GitHub Actions → GitHub Pages; Render (API)</td></tr>
+  </table>
+  <h2>1.3 Репозиторій і беклог</h2>
+  <p>Створено публічний репозиторій GitHub <code>Kirito072024/vetdim-clinic</code>. Коміти оформлюються за конвенцією Conventional Commits (<code>feat:</code>, <code>fix:</code>, <code>docs:</code>, <code>test:</code>, <code>perf:</code>, <code>ci:</code>), кожна логічна частина роботи — окремий коміт. Результат кожної практичної роботи позначено тегом <code>pr-01</code> … <code>pr-10</code>. Беклог задач, розбитий за практичними роботами, наведено у <code>docs/BACKLOG.md</code>; файл <code>.gitignore</code> виключає <code>node_modules/</code>, результати збірки та файли середовища.</p>
+</section>
+
+<!-- ============ РОЗДІЛ 2 ============ -->
+<section class="chapter">
+  <h1>Розділ 2. UX/UI-проєктування</h1>
+  <h2>2.1 Персони та user stories</h2>
+  <p>Створено дві персони (<code>docs/UX.md</code>). <b>Олена, 28 років</b> — маркетологиня, власниця кота, заходить зі смартфона; хоче записатися за 1–2 хвилини без дзвінка у вечірній час. <b>Віктор Петрович, 58 років</b> — власник старого пса з хронічною хворобою, користується ноутбуком; хоче потрапити саме до «свого» хірурга, йому заважають дрібні шрифти й неконтрастні кнопки.</p>
+  <table>
+    <caption>Таблиця 2.1 — User stories</caption>
+    <tr><th>№</th><th>User story</th></tr>
+    <tr><td>1</td><td>Як власниця кота, я хочу бачити вільний час лікаря на обрану дату, щоб записатися без дзвінка.</td></tr>
+    <tr><td>2</td><td>Як власник собаки з хронічною хворобою, я хочу почати запис зі сторінки конкретного лікаря, щоб потрапити до фахівця, якому довіряю.</td></tr>
+    <tr><td>3</td><td>Як новий клієнт, я хочу відфільтрувати лікарів за спеціалізацією, щоб швидко знайти дерматолога.</td></tr>
+    <tr><td>4</td><td>Як власник тварини, я хочу бачити ціни «від», щоб заздалегідь оцінити вартість візиту.</td></tr>
+    <tr><td>5</td><td>Як користувач смартфона, я хочу отримати підтвердження з номером запису, щоб бути впевненим, що запис створено.</td></tr>
+  </table>
+  <h2>2.2 User flow і структура сайту</h2>
+  <p>Головний сценарій: вхід на головну → «Записатися» (або каталог лікарів → сторінка лікаря → «Записатися до лікаря») → вибір послуги → вибір лікаря → вибір дати й вільного часу → введення даних → підтвердження. Передбачено альтернативні входи зі сторінки лікаря та каталогу послуг, у яких відповідні кроки форми заповнюються автоматично, а також обробку помилок: невалідні дані повертають на той самий крок, зайнятий слот — на крок вибору часу. Діаграми user flow і sitemap виконано у форматі Mermaid у <code>docs/UX.md</code>.</p>
+  <h2>2.3 Wireframe</h2>
+  <p>Low-fi wireframe шести екранів (головна, каталог лікарів, сторінка лікаря, форма запису, підтвердження, контакти) зверстано як HTML-сторінку <code>docs/wireframes/index.html</code> у двох версіях: desktop 1440 px (12 колонок, контент 1200 px, gutter 24 px) і mobile 375 px (4 колонки, поля 16 px). Використано лише сірі блоки та реальні тексти заголовків. Перемикач показує накладену сітку, темні блоки клікабельні й утворюють прототип.</p>
+  <figure>
+    <span class="crop" style="height:95mm"><img src="img/wireframe.png" alt="" style="width:150mm"></span>
+    <figcaption>Рисунок 2.1 — Low-fi wireframe головної сторінки (desktop і mobile)</figcaption>
+  </figure>
+  <p>У wireframe враховано <b>закон Хіка</b> (у меню лише три пункти та одна кнопка дії, форма розбита на чотири короткі кроки, список лікарів звужується фільтром) і <b>закон Фіттса</b> (велика контрастна кнопка «Записатися» повторюється в хедері й hero, на мобільному кнопка запису закріплена внизу в зоні великого пальця, слоти часу не менші за 44 × 44 px).</p>
+
+  <h2>2.4 Дизайн-система</h2>
+  <p>Настрій бренду — «турбота, довіра, тепло». Основний колір — глибокий бірюзовий <code>#0F766E</code> (медицина, спокій), акцентний — теплий кораловий <code>#F97352</code>, фон — кремовий <code>#FBF8F3</code> замість холодного білого. Шрифт Manrope з підтримкою кирилиці. Контраст усіх пар «текст — фон» перевірено розрахунком за формулою WCAG: основний текст 13,8 : 1, другорядний 5,6 : 1, кнопки 5,5 : 1.</p>
+  <p>Токени (кольори, розміри шрифтів через <code>clamp()</code>, відступи з кроком 4 px, радіуси, тіні) оголошено як CSS custom properties; темна тема перевизначає лише кольорові токени. Компоненти: кнопки трьох видів, бейджі, чіпи-фільтри, поля форм зі станами помилки, radio-картки, слоти часу, горизонтальний календар, картки лікаря й послуги, індикатор кроків, повідомлення. Усі вони зібрані на живій сторінці <code>static/styleguide.html</code>. Ілюстрації (пес і кіт, портрети лікарів) створено як SVG без стокових фото.</p>
+  <figure>
+    <span class="crop" style="height:88mm"><img src="img/styleguide.png" alt="" style="width:150mm"></span>
+    <figcaption>Рисунок 2.2 — Фрагмент сторінки дизайн-системи (styleguide)</figcaption>
+  </figure>
+  <h2>2.5 Макети</h2>
+  <p>Макети desktop (1280 px) і mobile (360 px) усіх сторінок наведено в папці <code>docs/mockups/</code> і в додатку А.</p>
+</section>
+
+<!-- ============ РОЗДІЛ 3 ============ -->
+<section class="chapter">
+  <h1>Розділ 3. Розробка клієнтської частини</h1>
+  <h2>3.1 Семантична розмітка (ПР 4)</h2>
+  <p>Статична версія сайту (папка <code>static/</code>) містить сім HTML-сторінок. Використано семантичні елементи <code>header</code>, <code>nav</code>, <code>main</code>, <code>article</code>, <code>aside</code>, <code>address</code>, <code>footer</code>, хлібні крихти як <code>nav &gt; ol</code>, списки опису <code>dl</code> для статистики й графіка роботи. Кожна сторінка має один <code>h1</code>, посилання «Перейти до вмісту», унікальні <code>title</code> і <code>description</code>, Open Graph. Перевірка W3C Nu HTML Checker: <b>0 помилок і 0 попереджень</b> на всіх сторінках.</p>
+  <h2>3.2 Стилі: mobile-first, Flexbox, Grid, темна тема (ПР 5)</h2>
+  <p>Стилі розділено на п'ять файлів: <code>tokens.css</code>, <code>base.css</code>, <code>components.css</code>, <code>layout.css</code>, <code>pages.css</code>. Базові правила написано для ширини 360 px, а медіазапити <code>min-width: 768px</code> і <code>min-width: 1280px</code> лише додають колонки й змінюють розташування.</p>
+  <p class="listing">Лістинг 3.1 — Темна тема через перевизначення токенів</p>
+  <pre>:root {
+  --color-bg: #fbf8f3;
+  --color-primary: #0f766e;
+  --color-on-primary: #ffffff;
+}
+:root[data-theme="dark"] {
+  --color-bg: #0d1716;
+  --color-primary: #2dd4bf;
+  --color-on-primary: #04201c;
+}</pre>
+  <p>Тему обрано ще до завантаження стилів невеликим скриптом у <code>&lt;head&gt;</code> (з <code>localStorage</code> або <code>prefers-color-scheme</code>), тому сторінка не «блимає». Сітки карток побудовано на CSS Grid (1 → 2 → 3–4 колонки), внутрішнє вирівнювання карток — на Flexbox. Уся картка клікабельна завдяки псевдоелементу посилання <code>::after</code> з <code>inset: 0</code>.</p>
+  <h2>3.3 JavaScript: DOM, події, валідація, Fetch (ПР 6)</h2>
+  <p>Код організовано в ES-модулі: <code>ui.js</code> (тема, бургер-меню з закриттям по Escape), <code>api.js</code> (завантаження JSON через Fetch), <code>validation.js</code> (правила валідації), модулі сторінок, які завантажуються динамічно через <code>import()</code> залежно від атрибута <code>data-page</code>. Пошук лікарів має затримку 150 мс (debounce), а вставка даних у HTML проходить через функцію <code>escapeHtml</code> для захисту від XSS.</p>
+  <p class="listing">Лістинг 3.2 — Правило валідації телефону (спільне для клієнта й сервера)</p>
+  <pre>export const normalizePhone = (value = '') =&gt; value.replace(/[\s()-]/g, '');
+
+phone(value = '') {
+  const v = normalizePhone(value);
+  if (!v) return 'Вкажіть номер телефону';
+  if (!/^\+380\d{9}$/.test(v)) return 'Введіть номер у форматі +380XXXXXXXXX';
+  return '';
+}</pre>
+  <p>Помилки показуються під полем після втрати фокусу, а після першої помилки — одразу під час введення. Поле отримує <code>aria-invalid="true"</code>, а текст помилки пов'язано з ним через <code>aria-describedby</code>, тож скрінрідер його озвучує.</p>
+
+  <h2>3.4 React-версія (ПР 7)</h2>
+  <p>React-застосунок створено командою <code>npm create vite</code> у папці <code>client/</code>. Маршрутизація — React Router (<code>BrowserRouter</code> з <code>basename</code> для публікації в підпапці). Спільний макет <code>Layout</code> містить хедер, <code>Outlet</code> і футер. Головна сторінка і каталоги входять в основний бандл, решта сторінок завантажується окремими чанками через <code>lazy</code> і <code>Suspense</code>.</p>
+  <table>
+    <caption>Таблиця 3.1 — Структура React-застосунку</caption>
+    <tr><th>Папка</th><th>Вміст</th></tr>
+    <tr><td><code>components/</code></td><td>Header, Footer, Layout, DoctorCard, ServiceCard, Field, Icon, PageHero</td></tr>
+    <tr><td><code>hooks/</code></td><td>useFetch, useTheme, useDocumentMeta</td></tr>
+    <tr><td><code>lib/</code></td><td>api.js (клієнт API), validation.js, format.js</td></tr>
+    <tr><td><code>pages/</code></td><td>Home, Doctors, Doctor, Services, Booking, Contacts, NotFound</td></tr>
+  </table>
+  <p class="listing">Лістинг 3.3 — Власний хук завантаження даних</p>
+  <pre>export function useFetch(fetcher, deps = []) {
+  const [state, setState] = useState({ data: null, error: null, loading: true });
+  const [attempt, setAttempt] = useState(0);
+  useEffect(() =&gt; {
+    let cancelled = false;                 // захист від «гонки» відповідей
+    setState((s) =&gt; ({ ...s, loading: true, error: null }));
+    fetcher()
+      .then((data) =&gt; !cancelled &amp;&amp; setState({ data, error: null, loading: false }))
+      .catch((error) =&gt; !cancelled &amp;&amp; setState({ data: null, error, loading: false }));
+    return () =&gt; { cancelled = true; };
+  }, [...deps, attempt]);
+  const reload = useCallback(() =&gt; setAttempt((n) =&gt; n + 1), []);
+  return { ...state, reload };
+}</pre>
+  <p>Сторінка запису зберігає стан кроку, обраних послуги, лікаря, дати й часу та полів форми в <code>useState</code>. Списки сумісних послуг і лікарів обчислюються через <code>useMemo</code>, а дата за замовчуванням (перший робочий день лікаря) обчислюється під час рендеру, а не встановлюється в ефекті, що рекомендують правила React. Вільні слоти завантажуються з API при кожній зміні лікаря чи дати. Фільтри каталогів зберігаються в URL (<code>useSearchParams</code>), тож посиланням з обраним фільтром можна поділитися.</p>
+  <figure>
+    <div class="two">
+      <img src="../screenshots/doctors-desktop.png" alt="" style="width:112mm">
+      <img src="../screenshots/booking-mobile.png" alt="" style="width:36mm">
+    </div>
+    <figcaption>Рисунок 3.1 — Каталог лікарів (desktop) і крок вибору часу (mobile)</figcaption>
+  </figure>
+</section>
+
+<!-- ============ РОЗДІЛ 4 ============ -->
+<section class="chapter">
+  <h1>Розділ 4. Серверна частина та API</h1>
+  <h2>4.1 Архітектура сервера</h2>
+  <p>Сервер написано на Express 5 (папка <code>server/</code>). Налаштування застосунку (<code>app.js</code>) відокремлено від запуску (<code>index.js</code>), що дозволяє тестувати API без зайнятого порту. Маршрути розділено на три роутери: довідники (лікарі, послуги, слоти), записи на прийом (CRUD) і зворотний зв'язок. Дані зберігаються в JSON-файлах; запис відбувається через тимчасовий файл і перейменування, а черга промісів не дає двом записам перетнутися.</p>
+  <table>
+    <caption>Таблиця 4.1 — Ендпоінти REST API</caption>
+    <tr><th>Метод</th><th>Шлях</th><th>Опис</th><th class="c">Статуси</th></tr>
+    <tr><td>GET</td><td><code>/api/doctors?specialty=&amp;q=</code></td><td>Список лікарів</td><td class="c">200</td></tr>
+    <tr><td>GET</td><td><code>/api/doctors/:id</code></td><td>Лікар</td><td class="c">200, 404</td></tr>
+    <tr><td>GET</td><td><code>/api/doctors/:id/slots?date=</code></td><td>Вільні слоти</td><td class="c">200, 400, 404</td></tr>
+    <tr><td>GET</td><td><code>/api/services?category=</code></td><td>Послуги</td><td class="c">200</td></tr>
+    <tr><td>GET</td><td><code>/api/appointments</code></td><td>Список записів</td><td class="c">200</td></tr>
+    <tr><td>POST</td><td><code>/api/appointments</code></td><td>Створити запис</td><td class="c">201, 400, 409</td></tr>
+    <tr><td>PUT</td><td><code>/api/appointments/:id</code></td><td>Перенести запис</td><td class="c">200, 400, 404, 409</td></tr>
+    <tr><td>DELETE</td><td><code>/api/appointments/:id</code></td><td>Скасувати запис</td><td class="c">204, 404</td></tr>
+    <tr><td>POST</td><td><code>/api/feedback</code></td><td>Зворотний зв'язок</td><td class="c">201, 400</td></tr>
+  </table>
+  <h2>4.2 Обробка форм і валідація</h2>
+  <p>Клієнтській валідації не можна довіряти, бо запит можна надіслати й в обхід форми, тому сервер повторює всі правила і додає перевірки, можливі лише на сервері: існування лікаря та послуги, чи надає лікар цю послугу, чи робочий це день, чи не в минулому дата й час, чи не зайнятий слот. Помилки повертаються зі статусом 400 і об'єктом <code>fields</code>, який клієнт показує під відповідними полями. Зайнятий слот дає статус 409 Conflict, і форма повертає користувача на крок вибору часу з оновленим розкладом.</p>
+  <p class="listing">Лістинг 4.1 — Створення запису</p>
+  <pre>appointmentsRouter.post('/', async (req, res) =&gt; {
+  const { errors, value, conflict } = validateAppointment(req.body);
+  if (Object.keys(errors).length)
+    throw new HttpError(400, 'Перевірте правильність заповнення форми', errors);
+  if (conflict) throw new HttpError(409, SLOT_TAKEN, { time: SLOT_TAKEN });
+  const appointment = await db.createAppointment(value);
+  res.status(201).location(`/api/appointments/${appointment.id}`).json(appointment);
+});</pre>
+  <p>Express 5 автоматично передає помилки з асинхронних обробників у централізований <code>errorHandler</code>, який формує однакову JSON-відповідь, обробляє некоректний JSON (400) і завеликий запит (413), а деталі внутрішніх помилок (500) пише лише в лог. Дозволені джерела запитів задаються змінною <code>CORS_ORIGIN</code>.</p>
+  <h2>4.3 Підключення до React</h2>
+  <p>Модуль <code>client/src/lib/api.js</code> інкапсулює всі запити. У режимі розробки Vite проксіює <code>/api</code> на <code>localhost:3001</code>, у production адреса API передається змінною <code>VITE_API_URL</code>. Якщо змінну не задано, вмикається демо-режим: дані читаються з JSON у <code>public/data</code>, а записи зберігаються в <code>localStorage</code>, тож опублікований сайт працює й без сервера.</p>
+  <h2>4.4 Автотести API</h2>
+  <p>Написано 11 тестів на вбудованому модулі <code>node:test</code>, які запускають сервер на випадковому порту з тимчасовою папкою даних: довідники й фільтри, слоти, серверна валідація, повний цикл CRUD, конфлікт слоту (409), некоректний JSON і невідомий маршрут. Усі тести проходять і запускаються в CI перед кожним деплоєм.</p>
+</section>
+
+<!-- ============ РОЗДІЛ 5 ============ -->
+<section class="chapter">
+  <h1>Розділ 5. Тестування, оптимізація, деплой</h1>
+  <h2>5.1 Аудит Lighthouse «до/після»</h2>
+  <p>Аудит проведено в режимі mobile на production-збірці з підключеним API.</p>
+  <table>
+    <caption>Таблиця 5.1 — Результати Lighthouse (Performance / Accessibility / Best Practices / SEO)</caption>
+    <tr><th>Сторінка</th><th class="c">До</th><th class="c">Після</th><th class="c">LCP до → після</th></tr>
+    <tr><td>Головна</td><td class="c">100 / 100 / 100 / 92</td><td class="c"><b>100 / 100 / 100 / 100</b></td><td class="c">1,5 → 1,4 с</td></tr>
+    <tr><td>Лікарі</td><td class="c">96 / 100 / 100 / 92</td><td class="c"><b>98 / 100 / 100 / 100</b></td><td class="c">2,7 → 2,2 с</td></tr>
+    <tr><td>Запис</td><td class="c">100 / 100 / 100 / 91</td><td class="c"><b>100 / 100 / 100 / 100</b></td><td class="c">1,5 → 0,8 с</td></tr>
+    <tr><td>Контакти</td><td class="c">—</td><td class="c"><b>100 / 100 / 100 / 100</b></td><td class="c">0,8 с</td></tr>
+    <tr><td>Сторінка лікаря</td><td class="c">—</td><td class="c"><b>96 / 100 / 100 / 100</b></td><td class="c">2,6 с</td></tr>
+  </table>
+  <p>Оптимізації: додано <code>robots.txt</code> і <code>sitemap.xml</code> (SEO 91–92 → 100); шрифт перенесено з Google Fonts у локальні файли (FCP 1,5 → 0,8 с); каталоги включено в основний бандл, щоб скоротити ланцюжок запитів до головного зображення (LCP 2,7 → 2,2 с); скелетон сторінки запису резервує висоту форми (CLS 0,18 → 0).</p>
+  <h2>5.2 Чек-лист тестів</h2>
+  <p>Складено чек-лист із 22 сценаріїв (<code>docs/TESTING.md</code>). Усі сценарії автоматизовано скриптами Puppeteer у папці <code>e2e/</code>: повний сценарій запису з помилками валідації, бургер-меню і клавіша Escape, збереження теми, пошук, сторінка 404, форма контактів, поведінка при недоступному API, навігація з клавіатури та перевірка відсутності горизонтальної прокрутки на 360, 768 і 1280 px для всіх маршрутів.</p>
+  <table>
+    <caption>Таблиця 5.2 — Фрагмент чек-листа</caption>
+    <tr><th>Сценарій</th><th>Очікуваний результат</th><th class="c">Статус</th></tr>
+    <tr><td>Підтвердження з порожніми полями</td><td>3 помилки, фокус на першому полі</td><td class="c">✔</td></tr>
+    <tr><td>Телефон «+38 (067) 123-45-67»</td><td>Приймається, нормалізується</td><td class="c">✔</td></tr>
+    <tr><td>Повторний запис на той самий слот</td><td>409, повернення до вибору часу</td><td class="c">✔</td></tr>
+    <tr><td>API недоступний</td><td>Повідомлення і кнопка повтору</td><td class="c">✔</td></tr>
+    <tr><td>Усі маршрути на 360 / 768 / 1280 px</td><td>Немає горизонтальної прокрутки</td><td class="c">✔</td></tr>
+  </table>
+  <h2>5.3 Доступність і SEO</h2>
+  <p>Реалізовано: skip-link, семантичні орієнтири, підписи всіх полів, <code>aria-invalid</code> та <code>aria-describedby</code> для помилок, <code>aria-pressed</code> для фільтрів і слотів, <code>aria-expanded</code> для меню, <code>aria-live</code> для динамічних змін, перенесення фокусу між кроками форми, видимий <code>:focus-visible</code>, цілі натискання не менші за 44 px, підтримку <code>prefers-reduced-motion</code>. Для SEO кожна сторінка встановлює власні <code>title</code>, <code>description</code> і Open Graph через хук <code>useDocumentMeta</code>.</p>
+  <h2>5.4 PWA</h2>
+  <p>Сайт можна встановити як застосунок: <code>manifest.webmanifest</code> з іконками (зокрема maskable) і ярликами «Запис» та «Лікарі». Service worker кешує сторінки й відповіді API за стратегією network-first (офлайн показуються останні збережені дані), а статичні файли з хешем в імені — за стратегією cache-first. Перевірка в браузері: помилок встановлення немає, каталог лікарів і контакти відкриваються без мережі.</p>
+  <h2>5.5 Схема деплою</h2>
+  <p>Кожен push у гілку <code>main</code> запускає GitHub Actions: тести API → лінтер → збірка React з <code>BASE_PATH=/vetdim-clinic/</code> → копіювання <code>index.html</code> у <code>404.html</code> (щоб прямі посилання на маршрути SPA працювали на GitHub Pages) → публікація на GitHub Pages. API розгортається на Render за файлом <code>render.yaml</code> з автодеплоєм із <code>main</code> і часовим поясом Europe/Kyiv.</p>
+  <pre style="font-size:11pt">  git push (main)
+       │
+       ├──► GitHub Actions ──► npm test ──► lint + build ──► GitHub Pages
+       │                                                     kirito072024.github.io/vetdim-clinic
+       │                                                            │ fetch /api
+       └──► Render (render.yaml) ──► Express API ◄──────────────────┘</pre>
+</section>
+
+<!-- ============ AI ============ -->
+<section class="chapter">
+  <h1>Використання AI-інструментів</h1>
+  <p>Під час практики використовувався AI-агент <b>Claude Code</b> (Anthropic) у редакторі VS Code. Він застосовувався для генерації документації, розмітки, стилів, JavaScript і React-коду, серверної частини, тестів і скриптів перевірки. Робота велася поетапно за практичними роботами, кожна частина фіксувалася окремим комітом.</p>
+  <p>Код, згенерований AI, не був безпомилковим, і дефекти знаходились саме завдяки перевіркам (табл. 6.1). Повний перелік наведено в <code>docs/AI.md</code>.</p>
+  <table>
+    <caption>Таблиця 6.1 — Помилки, знайдені й виправлені під час роботи з AI</caption>
+    <tr><th>Проблема</th><th>Як виявлено</th><th>Виправлення</th></tr>
+    <tr><td>React падав при переході між сторінками (<code>destroy is not a function</code>)</td><td>e2e-тест</td><td>Ефект <code>() =&gt; window.scrollTo(0,0)</code> повертав Promise; тіло ефекту взято у фігурні дужки</td></tr>
+    <tr><td>Попередження лінтера про <code>setState</code> в ефектах</td><td>oxlint</td><td>Значення обчислюються під час рендеру</td></tr>
+    <tr><td>Нумерація в хлібних крихтах, розтягнутий бейдж</td><td>Скриншоти</td><td>Виправлено CSS</td></tr>
+    <tr><td>Конфлікт класу <code>.step</code></td><td>Огляд коду</td><td>Перейменовано на <code>.form-step</code></td></tr>
+    <tr><td>Попередження W3C, SEO 92, CLS 0,18</td><td>W3C, Lighthouse</td><td>Окремі коміти <code>fix:</code> / <code>perf:</code></td></tr>
+  </table>
+  <p>Висновок щодо AI: інструмент значно прискорює роботу, але відповідальність за результат лишається на розробникові. Без тестів, лінтера, валідатора й аудиту частина помилок потрапила б у фінальну версію.</p>
+</section>
+
+<!-- ============ ВИСНОВКИ ============ -->
+<section class="chapter">
+  <h1>Висновки</h1>
+  <p>Під час навчальної практики створено веб-проєкт повного циклу — сайт ветеринарної клініки «ВетДім» з онлайн-записом на прийом до обраного лікаря.</p>
+  <p><b>Що вдалося:</b> виконано всі десять практичних робіт і обов'язкові вимоги: сім сторінок, адаптивна верстка 360/768/1280 px, React-клієнт на Vite, власне Express REST API з CRUD і серверною валідацією, валідний HTML, Lighthouse 96–100 у всіх категоріях (mobile), PWA, автодеплой із гілки <code>main</code>, понад 70 змістовних комітів і десять тегів <code>pr-01</code>…<code>pr-10</code>. Особливо вдалими вважаю покрокову форму запису з фільтрацією лікарів за послугою та захистом від подвійного бронювання, а також автоматизовані перевірки.</p>
+  <p><b>Що можна покращити:</b> замінити JSON-файли на базу даних (PostgreSQL або SQLite), бо на безкоштовному тарифі Render файлова система тимчасова; додати авторизацію та особистий кабінет зі списком записів і можливістю скасування; надсилати SMS/email-нагадування; проєктування виконувалось без Figma (за дозволом викладача), тому макети представлено скриншотами зверстаних сторінок.</p>
+  <p><b>Набуті навички:</b> складання ТЗ і беклогу; UX-проєктування (персони, user stories, user flow, wireframe); створення дизайн-системи на CSS-токенах; семантична верстка, Flexbox, Grid, mobile-first; модульний JavaScript і Fetch API; React (компоненти, стан, хуки, маршрутизація, lazy-завантаження); розробка REST API на Express; автотести, e2e-тестування, аудит Lighthouse; налаштування CI/CD у GitHub Actions; критична перевірка коду, згенерованого AI.</p>
+</section>
+
+<!-- ============ ДЖЕРЕЛА ============ -->
+<section class="chapter">
+  <h1>Список джерел</h1>
+  <ol>
+    <li>MDN Web Docs. HTML, CSS, JavaScript. URL: https://developer.mozilla.org/uk/ (дата звернення: 11.11.2026).</li>
+    <li>React Documentation. URL: https://react.dev/ (дата звернення: 11.11.2026).</li>
+    <li>React Router Documentation. URL: https://reactrouter.com/ (дата звернення: 11.11.2026).</li>
+    <li>Vite Guide. URL: https://vite.dev/guide/ (дата звернення: 11.11.2026).</li>
+    <li>Express 5.x API Reference. URL: https://expressjs.com/ (дата звернення: 11.11.2026).</li>
+    <li>Node.js Documentation: Test runner. URL: https://nodejs.org/api/test.html (дата звернення: 11.11.2026).</li>
+    <li>Web Content Accessibility Guidelines (WCAG) 2.2. W3C. URL: https://www.w3.org/TR/WCAG22/ (дата звернення: 11.11.2026).</li>
+    <li>Lighthouse overview. Chrome for Developers. URL: https://developer.chrome.com/docs/lighthouse/ (дата звернення: 11.11.2026).</li>
+    <li>web.dev: Learn PWA. URL: https://web.dev/learn/pwa/ (дата звернення: 11.11.2026).</li>
+    <li>GitHub Docs: Using custom workflows with GitHub Pages. URL: https://docs.github.com/pages (дата звернення: 11.11.2026).</li>
+    <li>Render Docs: Blueprint YAML Reference. URL: https://render.com/docs/blueprint-spec (дата звернення: 11.11.2026).</li>
+    <li>Conventional Commits 1.0.0. URL: https://www.conventionalcommits.org/ (дата звернення: 11.11.2026).</li>
+    <li>Laws of UX: Hick's Law, Fitts's Law. URL: https://lawsofux.com/ (дата звернення: 11.11.2026).</li>
+    <li>W3C Nu Html Checker. URL: https://validator.w3.org/nu/ (дата звернення: 11.11.2026).</li>
+  </ol>
+</section>
+
+<!-- ============ ДОДАТКИ ============ -->
+<section class="chapter">
+  <h1>Додатки</h1>
+  <h2 class="center">Додаток А. Скриншоти сторінок</h2>
+  <figure>
+    <img src="../screenshots/home-desktop.png" alt="" style="width:150mm">
+    <figcaption>Рисунок А.1 — Головна сторінка (desktop, світла тема)</figcaption>
+  </figure>
+  <figure>
+    <img src="../screenshots/home-dark-desktop.png" alt="" style="width:150mm">
+    <figcaption>Рисунок А.2 — Головна сторінка (темна тема)</figcaption>
+  </figure>
+  <figure>
+    <img src="../screenshots/doctor-desktop.png" alt="" style="width:150mm">
+    <figcaption>Рисунок А.3 — Сторінка лікаря</figcaption>
+  </figure>
+  <figure>
+    <img src="../screenshots/services-desktop.png" alt="" style="width:150mm">
+    <figcaption>Рисунок А.4 — Каталог послуг</figcaption>
+  </figure>
+  <figure>
+    <img src="../screenshots/contacts-desktop.png" alt="" style="width:150mm">
+    <figcaption>Рисунок А.5 — Контакти з формою зворотного зв'язку</figcaption>
+  </figure>
+  <figure>
+    <div class="two">
+      <img src="../screenshots/home-mobile.png" alt="" style="width:38mm">
+      <img src="../screenshots/doctors-mobile.png" alt="" style="width:38mm">
+      <img src="../screenshots/doctor-mobile.png" alt="" style="width:38mm">
+    </div>
+    <figcaption>Рисунок А.6 — Мобільна версія (360 px): головна, лікарі, сторінка лікаря</figcaption>
+  </figure>
+  <figure>
+    <div class="two">
+      <img src="../screenshots/services-mobile.png" alt="" style="width:38mm">
+      <img src="../screenshots/booking-mobile.png" alt="" style="width:38mm">
+      <img src="../screenshots/contacts-mobile.png" alt="" style="width:38mm">
+    </div>
+    <figcaption>Рисунок А.7 — Мобільна версія (360 px): послуги, запис, контакти</figcaption>
+  </figure>
+
+  <h2 class="center" style="break-before: page">Додаток Б. QR-коди</h2>
+  <div class="qr">
+    <div><img src="img/qr-site.svg" alt="QR-код сайту"><p class="noindent">Сайт<br><small>kirito072024.github.io/vetdim-clinic</small></p></div>
+    <div><img src="img/qr-repo.svg" alt="QR-код репозиторію"><p class="noindent">Репозиторій<br><small>github.com/Kirito072024/vetdim-clinic</small></p></div>
+  </div>
+</section>
+
+</body>
+</html>

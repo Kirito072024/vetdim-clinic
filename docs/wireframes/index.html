@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ВетДім — low-fi wireframe</title>
+<style>
+  :root { --g1:#f2f2f2; --g2:#d9d9d9; --g3:#bdbdbd; --g4:#8c8c8c; --ink:#333; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.4 Arial, Helvetica, sans-serif; color: var(--ink); background: #fafafa; }
+  .top { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--g2); padding: 10px 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .top a { color: var(--ink); }
+  .top label { margin-left: auto; cursor: pointer; }
+  section.screen { padding: 32px 24px 48px; border-bottom: 2px dashed var(--g3); }
+  section.screen > h2 { margin: 0 0 4px; }
+  .frames { display: flex; gap: 32px; align-items: flex-start; overflow-x: auto; padding-top: 12px; }
+  .cap { font-size: 12px; color: var(--g4); margin-bottom: 6px; }
+  .frame { position: relative; background: #fff; border: 1px solid var(--g3); overflow: hidden; }
+  .desk { width: 1440px; zoom: .55; }
+  .mob { width: 375px; zoom: .9; }
+  .desk .wrap { width: 1200px; margin: 0 auto; }
+  .mob .wrap { margin: 0 16px; }
+  .g { display: grid; gap: 24px; }
+  .desk .g { grid-template-columns: repeat(12, 1fr); }
+  .mob .g { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .s1{grid-column:span 1}.s2{grid-column:span 2}.s3{grid-column:span 3}.s4{grid-column:span 4}.s5{grid-column:span 5}.s6{grid-column:span 6}.s7{grid-column:span 7}.s8{grid-column:span 8}.s12{grid-column:1/-1}
+  .b { background: var(--g2); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: var(--g4); font-size: 13px; min-height: 24px; text-decoration: none; }
+  .b.l { background: var(--g1); border: 1px solid var(--g2); }
+  .b.d { background: var(--g4); color: #fff; }
+  a.b.d:hover { outline: 3px solid var(--g3); }
+  .h { font-weight: 700; color: var(--ink); margin: 0; }
+  .desk .h1 { font-size: 48px; } .mob .h1 { font-size: 28px; }
+  .desk .h2 { font-size: 32px; } .mob .h2 { font-size: 22px; }
+  .pad { padding: 32px 0; } .mob .pad { padding: 20px 0; }
+  .hdr { border-bottom: 1px solid var(--g2); padding: 16px 0; }
+  .ftr { background: var(--g1); padding: 32px 0; margin-top: 24px; }
+  .stack > * + * { margin-top: 12px; }
+  .chips { display: flex; gap: 8px; overflow: hidden; }
+  .chips .b { padding: 0 14px; height: 32px; border-radius: 16px; flex: none; }
+  .sticky { position: sticky; bottom: 0; background: #fff; padding: 12px 16px; border-top: 1px solid var(--g2); }
+  .note { font-size: 12px; color: #a33; font-style: italic; }
+  .grid-on .frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+  .grid-on .desk::after { background: repeating-linear-gradient(90deg, transparent 0 120px, rgba(255,0,0,.06) 120px 198px, transparent 198px 222px) ; margin: 0; left: 0; right: 0; }
+  .grid-on .mob::after { background: linear-gradient(90deg, transparent 16px, rgba(255,0,0,.06) 16px 87.75px, transparent 87.75px 103.75px, rgba(255,0,0,.06) 103.75px 175.5px, transparent 175.5px 191.5px, rgba(255,0,0,.06) 191.5px 263.25px, transparent 263.25px 279.25px, rgba(255,0,0,.06) 279.25px 359px, transparent 359px); }
+</style>
+</head>
+<body>
+<div class="top">
+  <strong>ВетДім · low-fi wireframe</strong>
+  <a href="#home">1 Головна</a><a href="#doctors">2 Лікарі</a><a href="#doctor">3 Лікар</a><a href="#booking">4 Запис</a><a href="#success">5 Підтвердження</a><a href="#contacts">6 Контакти</a>
+  <label><input type="checkbox" id="gridToggle"> Показати сітку (12 / 4 колонки)</label>
+</div>
+
+<!-- ============ 1. HOME ============ -->
+<section class="screen" id="home">
+  <h2>1. Головна</h2>
+  <div class="note">Темні блоки — клікабельні (прототип): ведуть на наступний екран сценарію.</div>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk">
+        <div class="hdr"><div class="wrap g"><div class="b s2">Логотип ВетДім</div><div class="s3"></div><a class="b l s1" href="#doctors">Лікарі</a><div class="b l s1">Послуги</div><a class="b l s1" href="#contacts">Контакти</a><div class="s1"></div><a class="b d s2" href="#booking">Записатися</a></div></div>
+        <div class="wrap g pad">
+          <div class="s6 stack" style="padding-top:40px"><p class="h h1">Турбота про вашого улюбленця — запис онлайн за 2 хвилини</p><div class="b l" style="height:60px">Підзаголовок: досвідчені лікарі, сучасне обладнання</div><div style="display:flex;gap:16px"><a class="b d" style="width:260px;height:56px" href="#booking">Записатися на прийом</a><a class="b l" style="width:200px;height:56px" href="#doctors">Наші лікарі</a></div></div>
+          <div class="b s6" style="height:420px">Ілюстрація</div>
+        </div>
+        <div class="wrap pad"><p class="h h2">Чому обирають нас</p></div>
+        <div class="wrap g"><div class="b l s4" style="height:160px">Перевага 1</div><div class="b l s4" style="height:160px">Перевага 2</div><div class="b l s4" style="height:160px">Перевага 3</div></div>
+        <div class="wrap pad"><p class="h h2">Популярні послуги</p></div>
+        <div class="wrap g"><div class="b l s3" style="height:180px">Послуга</div><div class="b l s3" style="height:180px">Послуга</div><div class="b l s3" style="height:180px">Послуга</div><div class="b l s3" style="height:180px">Послуга</div></div>
+        <div class="wrap pad"><p class="h h2">Наші лікарі</p></div>
+        <div class="wrap g"><a class="b l s4" style="height:260px" href="#doctor">Картка лікаря</a><div class="b l s4" style="height:260px">Картка лікаря</div><div class="b l s4" style="height:260px">Картка лікаря</div></div>
+        <div class="ftr"><div class="wrap g"><div class="b s3" style="height:100px">Логотип, опис</div><div class="b s3" style="height:100px">Навігація</div><div class="b s3" style="height:100px">Контакти</div><div class="b s3" style="height:100px">Графік роботи</div></div></div>
+      </div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob">
+        <div class="hdr"><div class="wrap g"><div class="b s2">Логотип</div><div class="s1"></div><div class="b s1">☰</div></div></div>
+        <div class="wrap g pad"><div class="s4 stack"><p class="h h1">Турбота про вашого улюбленця — запис онлайн за 2 хвилини</p><div class="b l" style="height:48px">Підзаголовок</div><a class="b d" style="height:52px" href="#booking">Записатися на прийом</a></div><div class="b s4" style="height:200px">Ілюстрація</div></div>
+        <div class="wrap"><p class="h h2">Чому обирають нас</p></div>
+        <div class="wrap g pad"><div class="b l s4" style="height:90px">Перевага 1</div><div class="b l s4" style="height:90px">Перевага 2</div><div class="b l s4" style="height:90px">Перевага 3</div></div>
+        <div class="wrap"><p class="h h2">Популярні послуги</p></div>
+        <div class="wrap g pad"><div class="b l s2" style="height:120px">Послуга</div><div class="b l s2" style="height:120px">Послуга</div><div class="b l s2" style="height:120px">Послуга</div><div class="b l s2" style="height:120px">Послуга</div></div>
+        <div class="wrap"><p class="h h2">Наші лікарі</p></div>
+        <div class="wrap g pad"><a class="b l s4" style="height:200px" href="#doctor">Картка лікаря</a></div>
+        <div class="ftr"><div class="wrap g"><div class="b s4" style="height:140px">Футер: контакти, графік, навігація</div></div></div>
+      </div></div>
+  </div>
+</section>
+
+<!-- ============ 2. DOCTORS ============ -->
+<section class="screen" id="doctors">
+  <h2>2. Каталог лікарів</h2>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип ВетДім</a><div class="s3"></div><div class="b l s1">Лікарі</div><div class="b l s1">Послуги</div><div class="b l s1">Контакти</div><div class="s1"></div><a class="b d s2" href="#booking">Записатися</a></div></div>
+        <div class="wrap g pad"><div class="b l s12" style="height:20px">Головна / Лікарі</div><div class="s8"><p class="h h1">Наші лікарі</p></div><div class="b l s4" style="height:48px">🔍 Пошук за ім'ям</div>
+          <div class="s12 chips"><div class="b d">Усі</div><div class="b l">Терапевт</div><div class="b l">Хірург</div><div class="b l">Дерматолог</div><div class="b l">Стоматолог</div><div class="b l">Офтальмолог</div></div></div>
+        <div class="wrap g"><a class="b l s4" style="height:340px" href="#doctor">Фото · ПІБ · Спеціалізація · Стаж · [Детальніше]</a><div class="b l s4" style="height:340px">Картка лікаря</div><div class="b l s4" style="height:340px">Картка лікаря</div><div class="b l s4" style="height:340px">Картка лікаря</div><div class="b l s4" style="height:340px">Картка лікаря</div><div class="b l s4" style="height:340px">Картка лікаря</div></div>
+        <div class="ftr"><div class="wrap g"><div class="b s12" style="height:100px">Футер</div></div></div>
+      </div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип</a><div class="s1"></div><div class="b s1">☰</div></div></div>
+        <div class="wrap g pad"><div class="s4"><p class="h h1">Наші лікарі</p></div><div class="b l s4" style="height:44px">🔍 Пошук</div><div class="s4 chips"><div class="b d">Усі</div><div class="b l">Терапевт</div><div class="b l">Хірург</div><div class="b l">Дерматолог →</div></div></div>
+        <div class="wrap g"><a class="b l s4" style="height:120px" href="#doctor">Фото | ПІБ, спеціалізація, стаж</a><div class="b l s4" style="height:120px">Картка лікаря</div><div class="b l s4" style="height:120px">Картка лікаря</div><div class="b l s4" style="height:120px">Картка лікаря</div></div>
+        <div class="ftr"><div class="wrap g"><div class="b s4" style="height:100px">Футер</div></div></div>
+      </div></div>
+  </div>
+</section>
+
+<!-- ============ 3. DOCTOR ============ -->
+<section class="screen" id="doctor">
+  <h2>3. Сторінка лікаря</h2>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип ВетДім</a><div class="s3"></div><a class="b l s1" href="#doctors">Лікарі</a><div class="b l s1">Послуги</div><div class="b l s1">Контакти</div><div class="s1"></div><a class="b d s2" href="#booking">Записатися</a></div></div>
+        <div class="wrap g pad"><div class="b l s12" style="height:20px">Головна / Лікарі / Іваненко Олена</div>
+          <div class="b s4" style="height:420px">Фото</div>
+          <div class="s8 stack"><p class="h h1">Іваненко Олена Петрівна</p><div class="b l" style="height:28px;width:260px">Терапевт · стаж 12 років</div><div class="b l" style="height:120px">Про лікаря, освіта</div><p class="h h2">Послуги лікаря</p><div class="b l" style="height:90px">Список послуг з цінами</div><p class="h h2">Графік прийому</p><div class="b l" style="height:50px">Пн Вт Ср Чт Пт</div><a class="b d" style="height:56px;width:300px" href="#booking">Записатися до лікаря</a></div></div>
+        <div class="ftr"><div class="wrap g"><div class="b s12" style="height:100px">Футер</div></div></div>
+      </div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип</a><div class="s1"></div><div class="b s1">☰</div></div></div>
+        <div class="wrap g pad"><a class="b l s4" style="height:20px" href="#doctors">← Лікарі</a><div class="b s4" style="height:240px">Фото</div><div class="s4 stack"><p class="h h1">Іваненко Олена Петрівна</p><div class="b l" style="height:24px">Терапевт · 12 років</div><div class="b l" style="height:110px">Про лікаря</div><p class="h h2">Послуги лікаря</p><div class="b l" style="height:110px">Список послуг</div><p class="h h2">Графік прийому</p><div class="b l" style="height:44px">Пн–Пт</div></div></div>
+        <div class="sticky"><a class="b d" style="height:52px" href="#booking">Записатися до лікаря</a></div>
+      </div></div>
+  </div>
+  <div class="note">Mobile: кнопка запису закріплена внизу — у зоні великого пальця (закон Фіттса).</div>
+</section>
+
+<!-- ============ 4. BOOKING ============ -->
+<section class="screen" id="booking">
+  <h2>4. Форма запису (крок 3 і 4 з 4)</h2>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип ВетДім</a><div class="s3"></div><a class="b l s1" href="#doctors">Лікарі</a><div class="b l s1">Послуги</div><div class="b l s1">Контакти</div><div class="s1"></div><div class="b d s2">Записатися</div></div></div>
+        <div class="wrap g pad"><div class="s12"><p class="h h1">Запис на прийом</p></div>
+          <div class="s12" style="display:flex;gap:12px"><div class="b" style="flex:1;height:40px">✓ 1 Послуга</div><div class="b" style="flex:1;height:40px">✓ 2 Лікар</div><div class="b d" style="flex:1;height:40px">3 Дата і час</div><div class="b l" style="flex:1;height:40px">4 Ваші дані</div></div>
+          <div class="s8 stack"><p class="h h2">Оберіть дату і час</p><div class="b l" style="height:260px">Календар</div><div class="g" style="grid-template-columns:repeat(6,1fr);gap:12px"><div class="b l" style="height:48px">09:00</div><div class="b l" style="height:48px">09:30</div><div class="b" style="height:48px">10:00</div><div class="b d" style="height:48px">10:30</div><div class="b l" style="height:48px">11:00</div><div class="b l" style="height:48px">11:30</div></div>
+            <p class="h h2">Ваші дані</p><div class="g" style="grid-template-columns:1fr 1fr;gap:16px"><div class="b l" style="height:52px">Ім'я *</div><div class="b l" style="height:52px">Телефон *</div><div class="b l" style="height:52px">Кличка тварини *</div><div class="b l" style="height:52px">Вид: ○ кіт ○ пес ○ інше</div></div><div class="b l" style="height:90px">Коментар</div>
+            <div style="display:flex;gap:16px"><div class="b l" style="height:52px;width:160px">← Назад</div><a class="b d" style="height:52px;width:260px" href="#success">Підтвердити запис</a></div></div>
+          <div class="b l s4" style="height:300px">Ваш запис: послуга, лікар, дата, час, ціна</div></div>
+      </div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип</a><div class="s1"></div><div class="b s1">☰</div></div></div>
+        <div class="wrap g pad"><div class="s4"><p class="h h1">Запис на прийом</p></div><div class="b s4" style="height:32px">Крок 3 з 4 · Дата і час ▬▬▬▭</div>
+          <div class="b l s4" style="height:220px">Календар</div><div class="b l s1" style="height:48px">09:00</div><div class="b s1" style="height:48px">10:00</div><div class="b d s1" style="height:48px">10:30</div><div class="b l s1" style="height:48px">11:00</div>
+          <div class="s4"><p class="h h2">Ваші дані</p></div><div class="b l s4" style="height:48px">Ім'я *</div><div class="b l s4" style="height:48px">Телефон *</div><div class="b l s4" style="height:48px">Кличка *</div><div class="b l s4" style="height:48px">Вид тварини</div><div class="b l s4" style="height:40px">▸ Ваш запис (підсумок)</div></div>
+        <div class="sticky" style="display:flex;gap:8px"><div class="b l" style="height:52px;width:90px">Назад</div><a class="b d" style="height:52px;flex:1" href="#success">Підтвердити</a></div>
+      </div></div>
+  </div>
+</section>
+
+<!-- ============ 5. SUCCESS ============ -->
+<section class="screen" id="success">
+  <h2>5. Підтвердження запису</h2>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk"><div class="wrap g pad" style="padding:80px 0"><div class="s3"></div><div class="s6 stack" style="text-align:center"><div class="b" style="height:96px;width:96px;margin:0 auto;border-radius:50%">✓</div><p class="h h1">Запис №1234 створено</p><div class="b l" style="height:140px">Дата · Час · Лікар · Послуга · Адреса</div><div style="display:flex;gap:16px;justify-content:center"><a class="b d" style="height:52px;width:200px" href="#home">На головну</a><div class="b l" style="height:52px;width:220px">Додати в календар</div></div></div></div></div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob"><div class="wrap g pad" style="padding:48px 0"><div class="s4 stack" style="text-align:center"><div class="b" style="height:72px;width:72px;margin:0 auto;border-radius:50%">✓</div><p class="h h1">Запис №1234 створено</p><div class="b l" style="height:160px">Деталі запису</div><a class="b d" style="height:52px" href="#home">На головну</a><div class="b l" style="height:52px">Додати в календар</div></div></div></div></div>
+  </div>
+</section>
+
+<!-- ============ 6. CONTACTS ============ -->
+<section class="screen" id="contacts">
+  <h2>6. Контакти</h2>
+  <div class="frames">
+    <div><div class="cap">Desktop 1440</div>
+      <div class="frame desk">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип ВетДім</a><div class="s3"></div><a class="b l s1" href="#doctors">Лікарі</a><div class="b l s1">Послуги</div><div class="b l s1">Контакти</div><div class="s1"></div><a class="b d s2" href="#booking">Записатися</a></div></div>
+        <div class="wrap g pad"><div class="s12"><p class="h h1">Контакти</p></div><div class="s5 stack"><div class="b l" style="height:60px">Адреса</div><div class="b l" style="height:60px">Телефон</div><div class="b l" style="height:90px">Графік роботи</div><p class="h h2">Напишіть нам</p><div class="b l" style="height:48px">Ім'я</div><div class="b l" style="height:48px">Email</div><div class="b l" style="height:100px">Повідомлення</div><div class="b d" style="height:52px;width:200px">Надіслати</div></div><div class="b s7" style="height:560px">Карта</div></div>
+      </div></div>
+    <div><div class="cap">Mobile 375</div>
+      <div class="frame mob">
+        <div class="hdr"><div class="wrap g"><a class="b s2" href="#home">Логотип</a><div class="s1"></div><div class="b s1">☰</div></div></div>
+        <div class="wrap g pad"><div class="s4"><p class="h h1">Контакти</p></div><div class="b l s4" style="height:50px">Адреса</div><div class="b l s4" style="height:50px">Телефон</div><div class="b l s4" style="height:70px">Графік</div><div class="b s4" style="height:200px">Карта</div><div class="s4"><p class="h h2">Напишіть нам</p></div><div class="b l s4" style="height:48px">Ім'я</div><div class="b l s4" style="height:48px">Email</div><div class="b l s4" style="height:90px">Повідомлення</div><div class="b d s4" style="height:52px">Надіслати</div></div>
+      </div></div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('gridToggle').addEventListener('change', e => document.body.classList.toggle('grid-on', e.target.checked));
+</script>
+</body>
+</html>

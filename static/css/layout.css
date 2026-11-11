@@ -283,7 +283,7 @@
 }
 
 @media (min-width: 1280px) {
-  .section {
+  .section:not(.section--tight) {
     padding-block: var(--space-9);
   }
 }

@@ -82,7 +82,7 @@
 | DELETE | `/api/appointments/:id` | Скасувати запис |
 | POST | `/api/feedback` | Повідомлення з форми контактів |
 
-Зберігання даних — JSON-файл (або SQLite) на сервері.
+Зберігання даних — JSON-файли на сервері.
 
 ## 7. Нефункціональні вимоги
 
@@ -98,10 +98,10 @@
 | Шар | Технології |
 |---|---|
 | Дизайн | HTML-wireframe, дизайн-система в коді (CSS-токени, styleguide) |
-| Фронтенд | HTML5, CSS3 / Tailwind CSS, JavaScript, React, React Router, Vite |
+| Фронтенд | HTML5, CSS3 (custom properties, Flexbox, Grid), JavaScript (ES-модулі), React, React Router, Vite |
 | Бекенд | Node.js, Express |
-| Тестування | Lighthouse, W3C Validator, ручний чек-лист |
-| Деплой | Vercel / Netlify (фронтенд), Render (API); автодеплой із гілки `main` |
+| Тестування | Lighthouse, W3C Validator, node:test (API), Puppeteer (e2e) |
+| Деплой | GitHub Pages через GitHub Actions (фронтенд), Render (API); автодеплой із гілки `main` |
 | Контроль версій | Git, GitHub (Issues, теги `pr-01` … `pr-10`) |
 
 ## 9. Етапи (практичні роботи)

@@ -39,9 +39,9 @@
   .chips .b { padding: 0 14px; height: 32px; border-radius: 16px; flex: none; }
   .sticky { position: sticky; bottom: 0; background: #fff; padding: 12px 16px; border-top: 1px solid var(--g2); }
   .note { font-size: 12px; color: #a33; font-style: italic; }
-  .grid-on .frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
-  .grid-on .desk::after { background: repeating-linear-gradient(90deg, transparent 0 120px, rgba(255,0,0,.06) 120px 198px, transparent 198px 222px) ; margin: 0; left: 0; right: 0; }
-  .grid-on .mob::after { background: linear-gradient(90deg, transparent 16px, rgba(255,0,0,.06) 16px 87.75px, transparent 87.75px 103.75px, rgba(255,0,0,.06) 103.75px 175.5px, transparent 175.5px 191.5px, rgba(255,0,0,.06) 191.5px 263.25px, transparent 263.25px 279.25px, rgba(255,0,0,.06) 279.25px 359px, transparent 359px); }
+  .grid-on .frame::after { content: ""; position: absolute; top: 0; bottom: 0; pointer-events: none; }
+  .grid-on .desk::after { left: 120px; right: 120px; background: repeating-linear-gradient(90deg, rgba(255,0,0,.08) 0 78px, transparent 78px 102px); }
+  .grid-on .mob::after { left: 16px; right: 16px; background: repeating-linear-gradient(90deg, rgba(255,0,0,.08) 0 73.75px, transparent 73.75px 89.75px); }
 </style>
 </head>
 <body>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kirito072024.github.io/vetdim-clinic/sitemap.xml

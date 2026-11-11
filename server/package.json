@@ -1,0 +1,20 @@
+{
+  "name": "vetdim-server",
+  "version": "1.0.0",
+  "description": "REST API ветеринарної клініки ВетДім (Express)",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+  }
+}

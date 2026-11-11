@@ -181,7 +181,10 @@ export default function Booking() {
     return (
       <>
         <PageHero title="Запис на прийом" lead="Чотири простих кроки — і ми чекаємо на вас." compact />
-        <div className="container section--tight"><div className="skeleton" /></div>
+        {/* Скелетон займає місце майбутньої форми — сторінка не «стрибає» (CLS) */}
+        <div className="container section--tight" aria-busy="true">
+          <div className="skeleton" style={{ minHeight: '70vh' }} />
+        </div>
       </>
     );
   }

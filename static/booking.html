@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запис на прийом — ВетДім</title>
+  <meta name="description" content="Онлайн-запис до ветеринара: оберіть послугу, лікаря, дату й вільний час. Підтвердження одразу.">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Запис на прийом — ВетДім">
+  <meta property="og:description" content="Онлайн-запис до ветеринара: оберіть послугу, лікаря, дату й вільний час. Підтвердження одразу.">
+  <meta property="og:locale" content="uk_UA">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+        <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+        <span class="logo__text">Вет<span>Дім</span></span>
+      </a>
+      <nav class="nav" id="main-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="doctors.html">Лікарі</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="booking.html"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Записатися</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему">
+          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <button class="icon-btn burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+          <svg class="icon burger__open" aria-hidden="true"><use href="img/icons.svg#i-menu"/></svg>
+          <svg class="icon burger__close" aria-hidden="true"><use href="img/icons.svg#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero--compact" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлібні крихти">
+          <ol><li><a href="index.html">Головна</a></li><li><span aria-current="page">Запис на прийом</span></li></ol>
+        </nav>
+        <h1 id="page-title">Запис на прийом</h1>
+        <p class="page-hero__lead">Чотири простих кроки — і ми чекаємо на вас.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container booking">
+        <form class="booking__form card" id="booking-form" novalidate>
+          <ol class="stepper" id="stepper">
+            <li class="stepper__item" data-state="current"><span>1 <span class="stepper__label">Послуга</span></span></li>
+            <li class="stepper__item"><span>2 <span class="stepper__label">Лікар</span></span></li>
+            <li class="stepper__item"><span>3 <span class="stepper__label">Дата і час</span></span></li>
+            <li class="stepper__item"><span>4 <span class="stepper__label">Ваші дані</span></span></li>
+          </ol>
+
+          <fieldset class="step" data-step="1">
+            <legend class="step__title">Оберіть послугу</legend>
+            <div class="options" id="service-options">
+              <label class="option"><input type="radio" name="serviceId" value="1" required><span class="option__body"><span class="option__title">Первинний огляд</span><span class="option__meta">Терапія · 30 хв</span></span><span class="option__price">від 400 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="2" required><span class="option__body"><span class="option__title">Вакцинація</span><span class="option__meta">Профілактика · 20 хв</span></span><span class="option__price">від 350 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="3" required><span class="option__body"><span class="option__title">Чипування</span><span class="option__meta">Профілактика · 15 хв</span></span><span class="option__price">від 450 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="4" required><span class="option__body"><span class="option__title">Стерилізація кішки</span><span class="option__meta">Хірургія · 60 хв</span></span><span class="option__price">від 2500 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="5" required><span class="option__body"><span class="option__title">Кастрація кота</span><span class="option__meta">Хірургія · 40 хв</span></span><span class="option__price">від 1500 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="6" required><span class="option__body"><span class="option__title">Лікування шкірних захворювань</span><span class="option__meta">Дерматологія · 40 хв</span></span><span class="option__price">від 600 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="7" required><span class="option__body"><span class="option__title">Чистка зубів ультразвуком</span><span class="option__meta">Стоматологія · 60 хв</span></span><span class="option__price">від 1800 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="8" required><span class="option__body"><span class="option__title">Огляд очей</span><span class="option__meta">Офтальмологія · 30 хв</span></span><span class="option__price">від 550 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="9" required><span class="option__body"><span class="option__title">УЗД черевної порожнини</span><span class="option__meta">Діагностика · 30 хв</span></span><span class="option__price">від 700 ₴</span></label>
+              <label class="option"><input type="radio" name="serviceId" value="10" required><span class="option__body"><span class="option__title">Аналіз крові</span><span class="option__meta">Діагностика · 15 хв</span></span><span class="option__price">від 450 ₴</span></label>
+            </div>
+            <p class="field__error" id="serviceId-error"></p>
+          </fieldset>
+
+          <fieldset class="step" data-step="2">
+            <legend class="step__title">Оберіть лікаря</legend>
+            <div class="options" id="doctor-options">
+              <label class="option"><input type="radio" name="doctorId" value="1" required><img class="option__avatar" src="img/doctors/doctor-1.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Олена Іваненко</span><span class="option__meta">Терапевт · стаж 12 років</span></span></label>
+              <label class="option"><input type="radio" name="doctorId" value="2" required><img class="option__avatar" src="img/doctors/doctor-2.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Андрій Коваль</span><span class="option__meta">Хірург · стаж 15 років</span></span></label>
+              <label class="option"><input type="radio" name="doctorId" value="3" required><img class="option__avatar" src="img/doctors/doctor-3.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Марія Шевчук</span><span class="option__meta">Дерматолог · стаж 8 років</span></span></label>
+              <label class="option"><input type="radio" name="doctorId" value="4" required><img class="option__avatar" src="img/doctors/doctor-4.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Дмитро Бондар</span><span class="option__meta">Стоматолог · стаж 10 років</span></span></label>
+              <label class="option"><input type="radio" name="doctorId" value="5" required><img class="option__avatar" src="img/doctors/doctor-5.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Ірина Мельник</span><span class="option__meta">Офтальмолог · стаж 7 років</span></span></label>
+              <label class="option"><input type="radio" name="doctorId" value="6" required><img class="option__avatar" src="img/doctors/doctor-6.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Тарас Ткаченко</span><span class="option__meta">Терапевт · стаж 5 років</span></span></label>
+            </div>
+            <p class="field__error" id="doctorId-error"></p>
+          </fieldset>
+
+          <fieldset class="step" data-step="3">
+            <legend class="step__title">Оберіть дату і час</legend>
+            <h2 class="step__subtitle">Дата</h2>
+            <div class="dates" id="dates" role="group" aria-label="Дата прийому">
+              <p class="muted">Спочатку оберіть лікаря.</p>
+            </div>
+            <h2 class="step__subtitle">Вільний час</h2>
+            <div class="slots" id="slots" role="group" aria-label="Час прийому">
+              <p class="muted">Оберіть дату, щоб побачити вільний час.</p>
+            </div>
+            <input type="hidden" name="date" id="date">
+            <input type="hidden" name="time" id="time">
+            <p class="field__error" id="time-error"></p>
+          </fieldset>
+
+          <fieldset class="step" data-step="4">
+            <legend class="step__title">Ваші дані</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="ownerName">Ваше ім'я <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="ownerName" name="ownerName" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="ownerName-error">
+                <p class="field__error" id="ownerName-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="phone">Телефон <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+380XXXXXXXXX" required pattern="\+380\d{9}" aria-describedby="phone-hint phone-error">
+                <p class="field__hint" id="phone-hint">Ми надішлемо SMS-нагадування за день до візиту.</p>
+                <p class="field__error" id="phone-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com" aria-describedby="email-error">
+                <p class="field__error" id="email-error"></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="petName">Кличка тварини <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="petName" name="petName" required maxlength="40" aria-describedby="petName-error">
+                <p class="field__error" id="petName-error"></p>
+              </div>
+              <fieldset class="options options--inline form-grid__full">
+                <legend>Вид тварини <span class="req" aria-hidden="true">*</span></legend>
+                <label class="option"><input type="radio" name="petType" value="cat" required checked><span class="option__title">Кіт</span></label>
+                <label class="option"><input type="radio" name="petType" value="dog"><span class="option__title">Пес</span></label>
+                <label class="option"><input type="radio" name="petType" value="other"><span class="option__title">Інше</span></label>
+              </fieldset>
+              <div class="field">
+                <label class="field__label" for="petAge">Вік тварини (років)</label>
+                <input class="input" id="petAge" name="petAge" type="number" min="0" max="30" step="0.5" inputmode="decimal" aria-describedby="petAge-error">
+                <p class="field__error" id="petAge-error"></p>
+              </div>
+              <div class="field form-grid__full">
+                <label class="field__label" for="comment">Що турбує? (необов'язково)</label>
+                <textarea class="textarea" id="comment" name="comment" maxlength="500" placeholder="Наприклад: кіт погано їсть уже 2 дні"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="alert alert--error" id="form-alert" role="alert" hidden><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-alert"/></svg><p></p></div>
+
+          <div class="booking__nav">
+            <button class="btn btn--ghost" type="button" id="prev-btn"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-left"/></svg>Назад</button>
+            <button class="btn btn--primary" type="button" id="next-btn">Далі <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></button>
+            <button class="btn btn--primary" type="submit" id="submit-btn"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg>Підтвердити запис</button>
+          </div>
+        </form>
+
+        <aside class="booking__summary card" aria-labelledby="summary-title">
+          <div class="card__body">
+            <h2 id="summary-title" class="booking__summary-title"><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg>Ваш запис</h2>
+            <dl class="summary" id="summary">
+              <div><dt>Послуга</dt><dd data-summary="service">—</dd></div>
+              <div><dt>Лікар</dt><dd data-summary="doctor">—</dd></div>
+              <div><dt>Дата</dt><dd data-summary="date">—</dd></div>
+              <div><dt>Час</dt><dd data-summary="time">—</dd></div>
+              <div class="summary__total"><dt>Вартість</dt><dd data-summary="price">—</dd></div>
+            </dl>
+            <p class="muted summary__note"><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-shield"/></svg>Безкоштовне скасування до 2 годин до візиту.</p>
+          </div>
+        </aside>
+
+        <section class="booking__success card" id="booking-success" hidden aria-labelledby="success-title" tabindex="-1">
+          <div class="card__body text-center">
+            <span class="success-icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg></span>
+            <h2 id="success-title">Запис <span data-success="number"></span> створено!</h2>
+            <p class="muted">Ми чекаємо на <strong data-success="pet"></strong>. Нагадування надійде на <span data-success="phone"></span>.</p>
+            <dl class="summary summary--center">
+              <div><dt>Послуга</dt><dd data-success="service"></dd></div>
+              <div><dt>Лікар</dt><dd data-success="doctor"></dd></div>
+              <div><dt>Дата і час</dt><dd data-success="datetime"></dd></div>
+              <div><dt>Адреса</dt><dd>м. Київ, вул. Садова, 12</dd></div>
+            </dl>
+            <div class="hero__actions hero__actions--center">
+              <a class="btn btn--primary" href="index.html">На головну</a>
+              <a class="btn btn--secondary" href="booking.html">Новий запис</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+          <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+          <span class="logo__text">Вет<span>Дім</span></span>
+        </a>
+        <p>Ветеринарна клініка, де вашого улюбленця зустрічають як вдома. Турбота, досвід і сучасна медицина.</p>
+        <ul class="socials">
+          <li><a class="icon-btn" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-instagram"/></svg></a></li>
+          <li><a class="icon-btn" href="https://www.facebook.com/" aria-label="Facebook" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-facebook"/></svg></a></li>
+        </ul>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <h2 class="site-footer__title">Сайт</h2>
+        <ul class="site-footer__list">
+          <li><a href="doctors.html">Лікарі</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="booking.html">Запис на прийом</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__title">Контакти</h2>
+        <address class="site-footer__list">
+          <a href="https://maps.google.com/?q=Київ,+вул.+Садова,+12" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-pin"/></svg>м. Київ, вул. Садова, 12</a>
+          <a href="tel:+380441234567"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-phone"/></svg>+38 (044) 123-45-67</a>
+          <a href="mailto:hello@vetdim.ua"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-mail"/></svg>hello@vetdim.ua</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Графік роботи</h2>
+        <dl class="hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–20:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Нд</dt><dd>вихідний</dd></div>
+        </dl>
+        <p class="site-footer__emergency"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg>Екстрена допомога — цілодобово за телефоном</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© 2026 ВетДім. Навчальний проєкт.</p>
+      <p><a href="styleguide.html">Дизайн-система</a></p>
+    </div>
+  </footer>
+</body>
+</html>

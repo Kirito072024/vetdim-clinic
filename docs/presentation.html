@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ВетДім — захист практики</title>
+<style>
+  :root { --p: #0f766e; --p2: #ccfbf1; --a: #f97352; --bg: #fbf8f3; --t: #1c2b2d; --m: #55676a; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0d1716; font-family: "Manrope", system-ui, "Segoe UI", Arial, sans-serif; color: var(--t); }
+  .deck { height: 100%; display: grid; place-items: center; }
+  .slide { display: none; width: min(96vw, calc(96vh * 16 / 9)); aspect-ratio: 16 / 9; background: var(--bg); border-radius: 18px; padding: 5% 6%; position: relative; overflow: hidden; box-shadow: 0 30px 80px rgb(0 0 0 / .4); }
+  .slide.active { display: flex; flex-direction: column; animation: in .4s ease; }
+  @keyframes in { from { opacity: 0; transform: translateY(12px); } }
+  .slide::after { content: attr(data-n); position: absolute; right: 3%; bottom: 4%; color: var(--m); font-size: clamp(10px, 1.2vw, 16px); }
+  h1 { font-size: clamp(28px, 5.2vw, 76px); margin: 0 0 .3em; line-height: 1.05; letter-spacing: -.02em; }
+  h2 { font-size: clamp(20px, 3vw, 44px); margin: 0 0 .6em; letter-spacing: -.02em; }
+  p, li { font-size: clamp(12px, 1.6vw, 24px); line-height: 1.5; }
+  ul { margin: 0; padding-left: 1.2em; }
+  li { margin-bottom: .35em; }
+  .eyebrow { color: var(--p); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; font-size: clamp(10px, 1.1vw, 16px); margin: 0 0 .6em; }
+  .grad { background: linear-gradient(100deg, var(--p), var(--a)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .row { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4%; align-items: center; flex: 1; min-height: 0; }
+  .row img { width: 100%; border-radius: 12px; box-shadow: 0 12px 40px rgb(0 0 0 / .15); }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3%; margin-top: auto; }
+  .stat { background: #fff; border: 1px solid #e2e8e6; border-radius: 14px; padding: 6% 8%; }
+  .stat b { display: block; font-size: clamp(20px, 3.4vw, 52px); color: var(--p); }
+  .stat span { font-size: clamp(10px, 1.2vw, 18px); color: var(--m); }
+  .chips { display: flex; flex-wrap: wrap; gap: .5em; }
+  .chip { background: var(--p2); color: #115e59; font-weight: 700; padding: .3em .9em; border-radius: 999px; font-size: clamp(11px, 1.4vw, 20px); }
+  table { border-collapse: collapse; width: 100%; font-size: clamp(11px, 1.45vw, 22px); }
+  th, td { padding: .45em .6em; border-bottom: 1px solid #e2e8e6; text-align: left; }
+  th { color: var(--m); font-weight: 700; }
+  td.ok { color: var(--p); font-weight: 800; }
+  .flow { display: flex; align-items: center; gap: 1.5%; flex-wrap: wrap; margin: 2% 0; }
+  .flow span { background: #fff; border: 2px solid var(--p); border-radius: 12px; padding: .5em .9em; font-weight: 700; font-size: clamp(11px, 1.4vw, 20px); }
+  .flow i { color: var(--a); font-style: normal; font-weight: 800; font-size: clamp(14px, 2vw, 28px); }
+  .cover { background: linear-gradient(135deg, #0f766e, #134e4a); color: #fff; justify-content: center; }
+  .cover h1, .cover p { color: #fff; }
+  .cover .eyebrow { color: #99f6e4; }
+  .cover img { position: absolute; right: 4%; bottom: 0; width: 42%; }
+  .qr { display: flex; gap: 6%; margin-top: auto; }
+  .qr div { text-align: center; }
+  .qr img { width: clamp(80px, 14vw, 200px); background: #fff; padding: 6px; border-radius: 10px; }
+  .hint { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); color: #9fb3af; font-size: 13px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 4%; }
+  .phones { display: flex; gap: 3%; justify-content: center; height: 100%; }
+  .phones img { height: 100%; width: auto; max-height: 52vh; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <section class="slide cover active" data-n="1">
+    <p class="eyebrow">Навчальна практика · WEB-технології та WEB-дизайн</p>
+    <h1>ВетДім</h1>
+    <p style="max-width:52%">Сайт ветеринарної клініки з онлайн-записом<br>на прийом до обраного лікаря</p>
+    <p style="max-width:52%;opacity:.8;margin-top:2em">Студент(ка): ____________ · група ______</p>
+    <img src="../client/public/img/hero.svg" alt="">
+  </section>
+
+  <section class="slide" data-n="2">
+    <p class="eyebrow">Проблема</p>
+    <h2>Записатися до ветеринара — досі через дзвінок</h2>
+    <div class="two" style="flex:1">
+      <ul>
+        <li>Телефонувати лише в робочий час і чекати на лінії</li>
+        <li>Не видно, який лікар що лікує</li>
+        <li>Не видно вільного часу</li>
+        <li>Сайти клінік незручні на телефоні</li>
+      </ul>
+      <div>
+        <p><b>Рішення:</b> онлайн-запис у 4 кроки.</p>
+        <div class="flow"><span>Послуга</span><i>→</i><span>Лікар</span><i>→</i><span>Дата і час</span><i>→</i><span>Дані</span></div>
+        <p>Персони: <b>Олена, 28</b> (смартфон, мало часу) і <b>Віктор Петрович, 58</b> (хоче до «свого» хірурга).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-n="3">
+    <p class="eyebrow">ПР 2–3 · Проєктування</p>
+    <h2>Від wireframe до дизайн-системи</h2>
+    <div class="row">
+      <ul>
+        <li>Low-fi wireframe 6 екранів, сітка 12 / 4 колонки</li>
+        <li>Закон Хіка: 3 пункти меню, форма з 4 коротких кроків</li>
+        <li>Закон Фіттса: велика кнопка запису, sticky-CTA на мобільному</li>
+        <li>CSS-токени, світла й темна тема, контраст WCAG AA</li>
+      </ul>
+      <img src="report/img/styleguide.png" alt="" style="max-height:55vh;object-fit:cover;object-position:top">
+    </div>
+  </section>
+
+  <section class="slide" data-n="4">
+    <p class="eyebrow">Результат</p>
+    <h2>7 сторінок, mobile-first</h2>
+    <div class="row">
+      <img src="screenshots/home-desktop.png" alt="">
+      <div class="phones">
+        <img src="screenshots/doctors-mobile.png" alt="">
+        <img src="screenshots/booking-mobile.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-n="5">
+    <p class="eyebrow">ПР 4–7 · Клієнт</p>
+    <h2>HTML → CSS → JS → React</h2>
+    <div class="two" style="flex:1">
+      <ul>
+        <li><b>HTML5:</b> семантика, 0 помилок W3C</li>
+        <li><b>CSS3:</b> токени, Grid, Flexbox, <code>clamp()</code>, темна тема</li>
+        <li><b>JS:</b> ES-модулі, Fetch, валідація, debounce</li>
+        <li><b>React 19 + Vite:</b> Router, lazy-сторінки, хуки <code>useFetch</code>, <code>useTheme</code></li>
+      </ul>
+      <div>
+        <p class="eyebrow">Цікавий баг</p>
+        <p><code>useEffect(() =&gt; window.scrollTo(0, 0))</code> «ламав» React: у нових браузерах <code>scrollTo</code> повертає Promise, а React сприймав його як функцію очищення.</p>
+        <p>Знайдено e2e-тестом, виправлено фігурними дужками.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-n="6">
+    <p class="eyebrow">ПР 8 · Сервер</p>
+    <h2>Express REST API</h2>
+    <div class="two" style="flex:1">
+      <table>
+        <tr><th>Метод</th><th>Шлях</th></tr>
+        <tr><td>GET</td><td>/api/doctors · /services</td></tr>
+        <tr><td>GET</td><td>/api/doctors/:id/slots</td></tr>
+        <tr><td>POST</td><td>/api/appointments → 201 / 400 / 409</td></tr>
+        <tr><td>PUT</td><td>/api/appointments/:id</td></tr>
+        <tr><td>DELETE</td><td>/api/appointments/:id → 204</td></tr>
+      </table>
+      <ul>
+        <li>Валідація на клієнті <b>і</b> на сервері</li>
+        <li>Лікар має надавати послугу, день — робочий</li>
+        <li>Подвійне бронювання → <b>409 Conflict</b></li>
+        <li><b>11 автотестів</b> (node:test) у CI</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide" data-n="7">
+    <p class="eyebrow">ПР 9 · Якість</p>
+    <h2>Lighthouse mobile: до → після</h2>
+    <table>
+      <tr><th>Сторінка</th><th>Performance</th><th>Accessibility</th><th>Best Practices</th><th>SEO</th></tr>
+      <tr><td>Головна</td><td class="ok">100</td><td class="ok">100</td><td class="ok">100</td><td>92 → <b class="ok">100</b></td></tr>
+      <tr><td>Лікарі</td><td>96 → <b class="ok">98</b></td><td class="ok">100</td><td class="ok">100</td><td>92 → <b class="ok">100</b></td></tr>
+      <tr><td>Запис</td><td class="ok">100</td><td class="ok">100</td><td class="ok">100</td><td>91 → <b class="ok">100</b></td></tr>
+    </table>
+    <div class="chips" style="margin-top:3%">
+      <span class="chip">robots.txt + sitemap</span><span class="chip">локальний шрифт</span><span class="chip">LCP 2.7 → 2.2 s</span><span class="chip">CLS 0.18 → 0</span><span class="chip">чек-лист: 22 сценарії</span>
+    </div>
+  </section>
+
+  <section class="slide" data-n="8">
+    <p class="eyebrow">ПР 10 · Деплой і PWA</p>
+    <h2>git push → сайт оновлено</h2>
+    <div class="flow"><span>git push main</span><i>→</i><span>GitHub Actions</span><i>→</i><span>тести</span><i>→</i><span>build</span><i>→</i><span>GitHub Pages</span></div>
+    <div class="flow"><span>git push main</span><i>→</i><span>Render</span><i>→</i><span>Express API</span></div>
+    <ul style="margin-top:2%">
+      <li>PWA: встановлюється на телефон, каталог працює офлайн</li>
+      <li>Демо-режим: сайт працює навіть без сервера</li>
+    </ul>
+    <div class="stats">
+      <div class="stat"><b>70+</b><span>комітів</span></div>
+      <div class="stat"><b>10</b><span>тегів pr-01…pr-10</span></div>
+      <div class="stat"><b>96–100</b><span>Lighthouse</span></div>
+      <div class="stat"><b>0</b><span>помилок W3C</span></div>
+    </div>
+  </section>
+
+  <section class="slide" data-n="9">
+    <p class="eyebrow">Дякую за увагу</p>
+    <h2>Висновки</h2>
+    <ul>
+      <li>Пройдено повний цикл: ТЗ → UX → дизайн → верстка → React → API → тести → деплой</li>
+      <li>AI (Claude Code) прискорив роботу, але кожну помилку знайшли тести, лінтер і аудит</li>
+      <li>Далі: база даних, особистий кабінет, SMS-нагадування</li>
+    </ul>
+    <div class="qr">
+      <div><img src="report/img/qr-site.svg" alt="QR сайт"><p>Сайт</p></div>
+      <div><img src="report/img/qr-repo.svg" alt="QR репозиторій"><p>GitHub</p></div>
+    </div>
+  </section>
+
+</div>
+<div class="hint">← → або пробіл · F — на весь екран</div>
+<script>
+  const slides = [...document.querySelectorAll('.slide')];
+  let i = 0;
+  const show = (n) => { slides[i].classList.remove('active'); i = Math.max(0, Math.min(slides.length - 1, n)); slides[i].classList.add('active'); };
+  document.addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) show(i + 1);
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) show(i - 1);
+    if (e.key.toLowerCase() === 'f') document.documentElement.requestFullscreen?.();
+  });
+  document.addEventListener('click', (e) => show(e.clientX > innerWidth / 2 ? i + 1 : i - 1));
+</script>
+</body>
+</html>

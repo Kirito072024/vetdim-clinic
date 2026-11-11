@@ -1,0 +1,22 @@
+{
+  "name": "ВетДім — ветеринарна клініка",
+  "short_name": "ВетДім",
+  "description": "Онлайн-запис до ветеринара з вибором лікаря, дати й часу.",
+  "lang": "uk",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fbf8f3",
+  "theme_color": "#0f766e",
+  "categories": ["medical", "health", "lifestyle"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Записатися на прийом", "short_name": "Запис", "url": "./booking", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Наші лікарі", "short_name": "Лікарі", "url": "./doctors", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

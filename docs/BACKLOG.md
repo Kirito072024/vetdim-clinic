@@ -9,11 +9,11 @@
 - [ ] Створити Issues-беклог на GitHub
 
 ## ПР 2 — UX, wireframe
-- [ ] Персони користувачів (2)
-- [ ] User stories (5)
-- [ ] User flow запису на прийом
-- [ ] Sitemap
-- [ ] Low-fi wireframe 4+ екранів (desktop 1440 / mobile 375)
+- [x] Персони користувачів (2)
+- [x] User stories (5)
+- [x] User flow запису на прийом
+- [x] Sitemap
+- [x] Low-fi wireframe 6 екранів (desktop 1440 / mobile 375) — `docs/wireframes/`
 - [ ] Прототип і коридорне тестування
 
 ## ПР 3 — Дизайн-система

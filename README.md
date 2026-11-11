@@ -15,7 +15,7 @@
 
 | Шар | Технології |
 |---|---|
-| Дизайн | Figma |
+| Дизайн | HTML-wireframe, дизайн-токени (CSS custom properties) |
 | Фронтенд | React, Vite, React Router, Tailwind CSS |
 | Бекенд | Node.js, Express |
 | Деплой | Vercel / Netlify, Render |
@@ -28,7 +28,6 @@
 
 ## Посилання
 
-- Figma: _буде додано_
 - Сайт: _буде додано після деплою_
 
 ## Запуск

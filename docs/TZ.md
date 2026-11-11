@@ -97,7 +97,7 @@
 
 | Шар | Технології |
 |---|---|
-| Дизайн | Figma (wireframe, дизайн-система, макети desktop + mobile) |
+| Дизайн | HTML-wireframe, дизайн-система в коді (CSS-токени, styleguide) |
 | Фронтенд | HTML5, CSS3 / Tailwind CSS, JavaScript, React, React Router, Vite |
 | Бекенд | Node.js, Express |
 | Тестування | Lighthouse, W3C Validator, ручний чек-лист |

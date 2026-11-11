@@ -11,7 +11,7 @@
 ## ПР 2 — UX, wireframe
 - [ ] Персони користувачів (2)
 - [ ] User stories (5)
-- [ ] User flow запису на прийом (FigJam)
+- [ ] User flow запису на прийом
 - [ ] Sitemap
 - [ ] Low-fi wireframe 4+ екранів (desktop 1440 / mobile 375)
 - [ ] Прототип і коридорне тестування

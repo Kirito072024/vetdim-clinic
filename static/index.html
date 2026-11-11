@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ВетДім — ветеринарна клініка у Києві | Онлайн-запис до лікаря</title>
+  <meta name="description" content="Ветеринарна клініка ВетДім: терапія, хірургія, стоматологія, вакцинація. Запишіть кота чи собаку до обраного лікаря онлайн за 2 хвилини.">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ВетДім — ветеринарна клініка у Києві | Онлайн-запис до лікаря">
+  <meta property="og:description" content="Ветеринарна клініка ВетДім: терапія, хірургія, стоматологія, вакцинація. Запишіть кота чи собаку до обраного лікаря онлайн за 2 хвилини.">
+  <meta property="og:locale" content="uk_UA">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="index">
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+        <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+        <span class="logo__text">Вет<span>Дім</span></span>
+      </a>
+      <nav class="nav" id="main-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="doctors.html">Лікарі</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="booking.html"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Записатися</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему">
+          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <button class="icon-btn burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+          <svg class="icon burger__open" aria-hidden="true"><use href="img/icons.svg#i-menu"/></svg>
+          <svg class="icon burger__close" aria-hidden="true"><use href="img/icons.svg#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="badge badge--accent hero__badge"><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg>Ветеринарна клініка у Києві</p>
+          <h1 id="hero-title">Турбота про вашого улюбленця — <span class="text-gradient">запис онлайн</span> за 2 хвилини</h1>
+          <p class="hero__lead">Оберіть лікаря, зручний день і час — без дзвінків і черг. Досвідчені ветеринари, сучасне обладнання та тепле ставлення до кожного пацієнта.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="booking.html">Записатися на прийом <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+            <a class="btn btn--secondary btn--lg" href="doctors.html">Наші лікарі</a>
+          </div>
+          <dl class="stats">
+            <div><dt>Років досвіду</dt><dd>15+</dd></div>
+            <div><dt>Щасливих пацієнтів</dt><dd>12 000+</dd></div>
+            <div><dt>Середня оцінка</dt><dd>4.9 <svg class="icon icon--star" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg></dd></div>
+          </dl>
+        </div>
+        <div class="hero__media">
+          <img src="img/hero.svg" alt="Усміхнені пес і кіт" width="560" height="480" fetchpriority="high">
+          <div class="float-card float-card--top" aria-hidden="true">
+            <span class="float-card__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-check"/></svg></span>
+            <span><strong>Запис підтверджено</strong><small>Сьогодні, 18:30</small></span>
+          </div>
+          <div class="float-card float-card--bottom" aria-hidden="true">
+            <span class="float-card__icon float-card__icon--accent"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg></span>
+            <span><strong>Без черг і стресу</strong><small>Fear Free підхід</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Чому ВетДім</p>
+          <h2 id="why-title">Все для здоров'я вашого улюбленця</h2>
+        </header>
+        <ul class="features">
+          <li class="feature"><span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-award"/></svg></span><h3>Досвідчені лікарі</h3><p>Шість фахівців різних напрямів зі стажем до 15 років і постійним навчанням.</p></li>
+          <li class="feature"><span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-microscope"/></svg></span><h3>Власна лабораторія</h3><p>Аналізи крові, УЗД та діагностика — результати в день звернення.</p></li>
+          <li class="feature"><span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg></span><h3>Онлайн-запис 24/7</h3><p>Обирайте лікаря і вільний час будь-коли, навіть уночі.</p></li>
+          <li class="feature"><span class="feature__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg></span><h3>Без стресу</h3><p>Окремі зони очікування для котів і собак, спокійні огляди та смаколики.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="eyebrow">Послуги</p>
+            <h2 id="services-title">Популярні послуги</h2>
+          </div>
+          <a class="link-arrow" href="services.html">Усі послуги <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+        </header>
+        <ul class="grid grid--4">
+          <li>
+            <article class="card card--hover service-card">
+              <div class="card__body">
+                <div class="service-card__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-syringe"/></svg></div>
+                <p class="card__meta"><span>Профілактика</span><span><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-clock"/></svg>20 хв</span></p>
+                <h3 class="card__title">Вакцинація</h3>
+                <p class="muted service-card__text">Комплексні щеплення для котів і собак за календарем, з оглядом перед вакцинацією.</p>
+                <div class="card__footer">
+                  <p class="price"><small>від</small> 350 ₴</p>
+                  <a class="btn btn--secondary" href="booking.html?service=2" aria-label="Записатися: Вакцинація">Записатися</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover service-card">
+              <div class="card__body">
+                <div class="service-card__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-stethoscope"/></svg></div>
+                <p class="card__meta"><span>Терапія</span><span><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-clock"/></svg>30 хв</span></p>
+                <h3 class="card__title">Первинний огляд</h3>
+                <p class="muted service-card__text">Повний огляд, вимірювання температури й ваги, консультація та план лікування.</p>
+                <div class="card__footer">
+                  <p class="price"><small>від</small> 400 ₴</p>
+                  <a class="btn btn--secondary" href="booking.html?service=1" aria-label="Записатися: Первинний огляд">Записатися</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover service-card">
+              <div class="card__body">
+                <div class="service-card__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-tooth"/></svg></div>
+                <p class="card__meta"><span>Стоматологія</span><span><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-clock"/></svg>60 хв</span></p>
+                <h3 class="card__title">Чистка зубів ультразвуком</h3>
+                <p class="muted service-card__text">Видалення зубного каменю та полірування емалі під седацією.</p>
+                <div class="card__footer">
+                  <p class="price"><small>від</small> 1800 ₴</p>
+                  <a class="btn btn--secondary" href="booking.html?service=7" aria-label="Записатися: Чистка зубів ультразвуком">Записатися</a>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover service-card">
+              <div class="card__body">
+                <div class="service-card__icon"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-scalpel"/></svg></div>
+                <p class="card__meta"><span>Хірургія</span><span><svg class="icon icon--sm" aria-hidden="true"><use href="img/icons.svg#i-clock"/></svg>60 хв</span></p>
+                <h3 class="card__title">Стерилізація кішки</h3>
+                <p class="muted service-card__text">Планова операція під інгаляційним наркозом з післяопераційною попоною.</p>
+                <div class="card__footer">
+                  <p class="price"><small>від</small> 2500 ₴</p>
+                  <a class="btn btn--secondary" href="booking.html?service=4" aria-label="Записатися: Стерилізація кішки">Записатися</a>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="container">
+        <header class="section__header text-center">
+          <p class="eyebrow">Як це працює</p>
+          <h2 id="steps-title">Запис у три кроки</h2>
+        </header>
+        <ol class="steps">
+          <li class="step"><span class="step__num">1</span><h3>Оберіть послугу</h3><p>Огляд, щеплення, чистка зубів чи операція — ціни відомі заздалегідь.</p></li>
+          <li class="step"><span class="step__num">2</span><h3>Оберіть лікаря і час</h3><p>Бачите лише вільні слоти потрібного фахівця на найближчі два тижні.</p></li>
+          <li class="step"><span class="step__num">3</span><h3>Приходьте на прийом</h3><p>Ми чекаємо на вас і вашого улюбленця — без черги, точно в призначений час.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tint" aria-labelledby="doctors-title">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="eyebrow">Команда</p>
+            <h2 id="doctors-title">Наші лікарі</h2>
+          </div>
+          <a class="link-arrow" href="doctors.html">Усі лікарі <svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+        </header>
+        <ul class="grid grid--3">
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-1.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Терапевт</span>
+                <h3 class="card__title"><a href="doctor.html?id=1">Олена Іваненко</a></h3>
+                <div class="card__meta">
+                  <span>Стаж 12 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.9</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-2.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Хірург</span>
+                <h3 class="card__title"><a href="doctor.html?id=2">Андрій Коваль</a></h3>
+                <div class="card__meta">
+                  <span>Стаж 15 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.8</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-3.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Дерматолог</span>
+                <h3 class="card__title"><a href="doctor.html?id=3">Марія Шевчук</a></h3>
+                <div class="card__meta">
+                  <span>Стаж 8 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>5.0</span>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2 id="cta-title">Улюбленцю потрібна допомога?</h2>
+            <p>Запишіться онлайн або зателефонуйте — підкажемо, до якого лікаря звернутися.</p>
+          </div>
+          <div class="cta-band__actions">
+            <a class="btn btn--light btn--lg" href="booking.html">Записатися онлайн</a>
+            <a class="btn btn--outline-light btn--lg" href="tel:+380441234567"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-phone"/></svg>Зателефонувати</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+          <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+          <span class="logo__text">Вет<span>Дім</span></span>
+        </a>
+        <p>Ветеринарна клініка, де вашого улюбленця зустрічають як вдома. Турбота, досвід і сучасна медицина.</p>
+        <ul class="socials">
+          <li><a class="icon-btn" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-instagram"/></svg></a></li>
+          <li><a class="icon-btn" href="https://www.facebook.com/" aria-label="Facebook" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-facebook"/></svg></a></li>
+        </ul>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <h2 class="site-footer__title">Сайт</h2>
+        <ul class="site-footer__list">
+          <li><a href="doctors.html">Лікарі</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="booking.html">Запис на прийом</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__title">Контакти</h2>
+        <address class="site-footer__list">
+          <a href="https://maps.google.com/?q=Київ,+вул.+Садова,+12" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-pin"/></svg>м. Київ, вул. Садова, 12</a>
+          <a href="tel:+380441234567"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-phone"/></svg>+38 (044) 123-45-67</a>
+          <a href="mailto:hello@vetdim.ua"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-mail"/></svg>hello@vetdim.ua</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Графік роботи</h2>
+        <dl class="hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–20:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Нд</dt><dd>вихідний</dd></div>
+        </dl>
+        <p class="site-footer__emergency"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg>Екстрена допомога — цілодобово за телефоном</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© 2026 ВетДім. Навчальний проєкт.</p>
+      <p><a href="styleguide.html">Дизайн-система</a></p>
+    </div>
+  </footer>
+</body>
+</html>

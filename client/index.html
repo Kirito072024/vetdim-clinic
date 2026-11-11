@@ -1,12 +1,27 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ВетДім — ветеринарна клініка у Києві | Онлайн-запис до лікаря</title>
+    <meta name="description" content="Ветеринарна клініка ВетДім: терапія, хірургія, стоматологія, вакцинація. Запишіть кота чи собаку до обраного лікаря онлайн за 2 хвилини." />
+    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ВетДім — ветеринарна клініка у Києві" />
+    <meta property="og:description" content="Запишіть кота чи собаку до обраного лікаря онлайн за 2 хвилини." />
+    <meta property="og:locale" content="uk_UA" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- Тема ставиться до завантаження React, щоб не було «блимання» світлої теми -->
+    <script>
+      document.documentElement.dataset.theme =
+        localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
   </head>
   <body>
+    <noscript>Для роботи сайту ВетДім увімкніть JavaScript.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

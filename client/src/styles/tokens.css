@@ -1,0 +1,100 @@
+/* ==========================================================
+   ВетДім — дизайн-токени (див. docs/DESIGN.md)
+   ========================================================== */
+
+:root {
+  /* ---- Кольори: світла тема ---- */
+  --color-bg: #fbf8f3;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef6f4;
+  --color-text: #1c2b2d;
+  --color-text-muted: #55676a;
+  --color-primary: #0f766e;
+  --color-primary-hover: #115e59;
+  --color-primary-soft: #ccfbf1;
+  --color-on-primary: #ffffff;
+  --color-accent: #f97352;
+  --color-accent-soft: #ffe8df;
+  --color-accent-ink: #9a3412;
+  --color-border: #e2e8e6;
+  --color-danger: #b42318;
+  --color-danger-soft: #fef3f2;
+  --color-success: #15803d;
+  --color-success-soft: #ecfdf3;
+  --color-header: rgb(251 248 243 / 0.85);
+
+  /* ---- Типографіка ---- */
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-h1: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 1.1rem + 1.8vw, 2.25rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --lh-tight: 1.1;
+  --lh-body: 1.6;
+
+  /* ---- Відступи (крок 4 px) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* ---- Радіуси ---- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* ---- Тіні ---- */
+  --shadow-sm: 0 1px 2px rgb(16 42 40 / 0.06), 0 2px 8px rgb(16 42 40 / 0.05);
+  --shadow-md: 0 4px 12px rgb(16 42 40 / 0.08), 0 12px 32px rgb(16 42 40 / 0.08);
+  --shadow-lg: 0 24px 64px rgb(15 118 110 / 0.18);
+
+  /* ---- Розмітка ---- */
+  --container: 1200px;
+  --gutter: var(--space-4);
+  --header-h: 68px;
+
+  /* ---- Анімації ---- */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 200ms;
+
+  color-scheme: light;
+}
+
+/* ---- Темна тема ---- */
+:root[data-theme="dark"] {
+  --color-bg: #0d1716;
+  --color-surface: #14211f;
+  --color-surface-2: #1a2b29;
+  --color-text: #e6f0ee;
+  --color-text-muted: #9fb3af;
+  --color-primary: #2dd4bf;
+  --color-primary-hover: #5eead4;
+  --color-primary-soft: #123b37;
+  --color-on-primary: #04201c;
+  --color-accent: #fb8f6e;
+  --color-accent-soft: #3a211a;
+  --color-accent-ink: #fdba9f;
+  --color-border: #263936;
+  --color-danger: #f97066;
+  --color-danger-soft: #3a1714;
+  --color-success: #4ade80;
+  --color-success-soft: #10291a;
+  --color-header: rgb(13 23 22 / 0.85);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 8px 24px rgb(0 0 0 / 0.35);
+  --shadow-lg: 0 24px 64px rgb(0 0 0 / 0.45);
+  color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: var(--space-5);
+  }
+}

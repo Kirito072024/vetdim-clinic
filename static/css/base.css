@@ -82,8 +82,8 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
-ul[role="list"],
-ol[role="list"] {
+/* Списки з класом — це компоненти, тому без маркерів */
+:where(ul, ol)[class] {
   list-style: none;
   margin: 0;
   padding: 0;

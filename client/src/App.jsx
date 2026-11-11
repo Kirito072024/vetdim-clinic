@@ -2,11 +2,12 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
+import Doctors from './pages/Doctors.jsx';
+import Services from './pages/Services.jsx';
 
-// Головна завантажується одразу, інші сторінки — окремими чанками (code splitting)
-const Doctors = lazy(() => import('./pages/Doctors.jsx'));
+// Головна та каталоги (найчастіші точки входу) — в основному бандлі,
+// решта сторінок — окремими чанками (code splitting)
 const Doctor = lazy(() => import('./pages/Doctor.jsx'));
-const Services = lazy(() => import('./pages/Services.jsx'));
 const Booking = lazy(() => import('./pages/Booking.jsx'));
 const Contacts = lazy(() => import('./pages/Contacts.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));

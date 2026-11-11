@@ -1,0 +1,21 @@
+# Render Blueprint: Express API з автодеплоєм із гілки main
+# Render → New → Blueprint → обрати цей репозиторій
+services:
+  - type: web
+    name: vetdim-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Розклад клініки — за київським часом (сервери Render працюють в UTC)
+      - key: TZ
+        value: Europe/Kyiv
+      # Дозволяємо запити лише з сайту на GitHub Pages
+      - key: CORS_ORIGIN
+        value: https://kirito072024.github.io

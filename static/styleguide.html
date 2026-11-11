@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Дизайн-система — ВетДім</title>
+  <meta name="description" content="Живий каталог токенів і компонентів дизайн-системи ветеринарної клініки ВетДім.">
+  <meta name="robots" content="noindex">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <style>
+    .sg-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 2rem 1rem; }
+    .sg-section { padding-block: 2rem; border-top: 1px solid var(--color-border); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+    .sg-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .sg-grid--cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .swatch { border: 1px solid var(--color-border); border-radius: var(--radius-md); overflow: hidden; background: var(--color-surface); font-size: .8125rem; }
+    .swatch__color { height: 72px; }
+    .swatch__info { padding: .5rem .75rem; display: grid; }
+    .swatch__info code { color: var(--color-text-muted); }
+    .sg-type > * { margin-bottom: .75rem; }
+    .sg-box { display: grid; place-items: center; height: 64px; background: var(--color-surface-2); border: 1px dashed var(--color-border); font-size: .8125rem; color: var(--color-text-muted); }
+    .sg-form { display: grid; gap: 1.25rem; max-width: 520px; }
+  </style>
+</head>
+<body>
+<main class="container">
+  <header class="sg-header">
+    <div>
+      <p class="badge">Дизайн-система</p>
+      <h1>ВетДім UI Kit</h1>
+      <p class="muted">Токени та компоненти, з яких зібрано всі сторінки сайту. Перемкніть тему, щоб побачити темний варіант.</p>
+    </div>
+    <button class="icon-btn" type="button" id="themeToggle" aria-label="Перемкнути тему">
+      <svg aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+    </button>
+  </header>
+
+  <section class="sg-section" aria-labelledby="sg-colors">
+    <h2 id="sg-colors">Кольори</h2>
+    <div class="sg-grid">
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-primary)"></div><div class="swatch__info"><strong>Primary</strong><code>--color-primary</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-primary-hover)"></div><div class="swatch__info"><strong>Primary hover</strong><code>--color-primary-hover</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-primary-soft)"></div><div class="swatch__info"><strong>Primary soft</strong><code>--color-primary-soft</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-accent)"></div><div class="swatch__info"><strong>Accent</strong><code>--color-accent</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-accent-soft)"></div><div class="swatch__info"><strong>Accent soft</strong><code>--color-accent-soft</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-bg)"></div><div class="swatch__info"><strong>Background</strong><code>--color-bg</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-surface-2)"></div><div class="swatch__info"><strong>Surface 2</strong><code>--color-surface-2</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-text)"></div><div class="swatch__info"><strong>Text</strong><code>--color-text</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-text-muted)"></div><div class="swatch__info"><strong>Text muted</strong><code>--color-text-muted</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-danger)"></div><div class="swatch__info"><strong>Danger</strong><code>--color-danger</code></div></div>
+      <div class="swatch"><div class="swatch__color" style="background:var(--color-success)"></div><div class="swatch__info"><strong>Success</strong><code>--color-success</code></div></div>
+    </div>
+  </section>
+
+  <section class="sg-section sg-type" aria-labelledby="sg-type">
+    <h2 id="sg-type">Типографіка — Manrope</h2>
+    <p style="font-size:var(--fs-h1);font-weight:800;line-height:1.1;margin:0">H1 Турбота про улюбленця</p>
+    <p style="font-size:var(--fs-h2);font-weight:800;margin:0">H2 Наші лікарі</p>
+    <p style="font-size:var(--fs-h3);font-weight:700;margin:0">H3 Вакцинація та профілактика</p>
+    <p>Body 16/1.6 — Запишіть вашого улюбленця до лікаря онлайн. Оберіть зручний час, і ми нагадаємо про візит.</p>
+    <p class="muted" style="font-size:var(--fs-small)">Small 14 — Допоміжний текст і підписи.</p>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-space">
+    <h2 id="sg-space">Відступи та радіуси</h2>
+    <div class="sg-row" style="align-items:flex-end">
+      <div class="sg-box" style="width:16px;height:16px"></div>
+      <div class="sg-box" style="width:24px;height:24px"></div>
+      <div class="sg-box" style="width:32px;height:32px"></div>
+      <div class="sg-box" style="width:48px;height:48px"></div>
+      <div class="sg-box" style="width:64px;height:64px">64</div>
+      <div class="sg-box" style="width:96px;height:96px">96</div>
+    </div>
+    <div class="sg-row" style="margin-top:1rem">
+      <div class="sg-box" style="width:120px;border-radius:var(--radius-sm)">sm · 8</div>
+      <div class="sg-box" style="width:120px;border-radius:var(--radius-md)">md · 14</div>
+      <div class="sg-box" style="width:120px;border-radius:var(--radius-lg)">lg · 22</div>
+      <div class="sg-box" style="width:120px;border-radius:var(--radius-pill)">pill</div>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-buttons">
+    <h2 id="sg-buttons">Кнопки</h2>
+    <div class="sg-row">
+      <a class="btn btn--primary btn--lg" href="#sg-buttons">Записатися на прийом <svg aria-hidden="true"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+      <button class="btn btn--primary" type="button">Primary</button>
+      <button class="btn btn--secondary" type="button">Secondary</button>
+      <button class="btn btn--ghost" type="button">Ghost</button>
+      <button class="btn btn--primary" type="button" disabled>Disabled</button>
+      <button class="icon-btn" type="button" aria-label="Меню"><svg aria-hidden="true"><use href="img/icons.svg#i-menu"/></svg></button>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-badges">
+    <h2 id="sg-badges">Бейджі та чіпи</h2>
+    <div class="sg-row">
+      <span class="badge">Терапевт</span>
+      <span class="badge badge--accent">Популярне</span>
+    </div>
+    <div class="chips" style="margin-top:1rem">
+      <button class="chip" type="button" aria-pressed="true">Усі</button>
+      <button class="chip" type="button" aria-pressed="false">Терапевт</button>
+      <button class="chip" type="button" aria-pressed="false">Хірург</button>
+      <button class="chip" type="button" aria-pressed="false">Дерматолог</button>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-forms">
+    <h2 id="sg-forms">Поля форм</h2>
+    <form class="sg-form" onsubmit="return false">
+      <div class="field">
+        <label class="field__label" for="sg-name">Ваше ім'я <span class="req">*</span></label>
+        <input class="input" id="sg-name" placeholder="Олена">
+      </div>
+      <div class="field">
+        <label class="field__label" for="sg-phone">Телефон <span class="req">*</span></label>
+        <input class="input" id="sg-phone" value="+38 067" aria-invalid="true" aria-describedby="sg-phone-err">
+        <p class="field__error" id="sg-phone-err">Введіть номер у форматі +380XXXXXXXXX</p>
+      </div>
+      <div class="field">
+        <label class="field__label" for="sg-spec">Спеціалізація</label>
+        <select class="select" id="sg-spec"><option>Терапевт</option><option>Хірург</option></select>
+      </div>
+      <fieldset class="options options--inline">
+        <legend>Вид тварини</legend>
+        <label class="option"><input type="radio" name="sg-pet" checked><span class="option__title">Кіт</span></label>
+        <label class="option"><input type="radio" name="sg-pet"><span class="option__title">Пес</span></label>
+        <label class="option"><input type="radio" name="sg-pet"><span class="option__title">Інше</span></label>
+      </fieldset>
+      <fieldset class="options">
+        <legend>Послуга</legend>
+        <label class="option"><input type="radio" name="sg-srv" checked><span class="option__body"><span class="option__title">Вакцинація</span><span class="option__meta">20 хв</span></span><span class="option__price">від 350 ₴</span></label>
+        <label class="option"><input type="radio" name="sg-srv"><span class="option__body"><span class="option__title">Первинний огляд</span><span class="option__meta">30 хв</span></span><span class="option__price">від 400 ₴</span></label>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-booking">
+    <h2 id="sg-booking">Запис: кроки, дати, слоти</h2>
+    <ol class="stepper">
+      <li class="stepper__item" data-state="done"><span>1 <span class="stepper__label">Послуга</span></span></li>
+      <li class="stepper__item" data-state="done"><span>2 <span class="stepper__label">Лікар</span></span></li>
+      <li class="stepper__item" data-state="current"><span>3 <span class="stepper__label">Дата і час</span></span></li>
+      <li class="stepper__item"><span>4 <span class="stepper__label">Ваші дані</span></span></li>
+    </ol>
+    <div class="dates">
+      <button class="date" type="button" aria-pressed="true"><span class="date__dow">Пн</span><span class="date__day">16</span><span class="date__month">лист</span></button>
+      <button class="date" type="button"><span class="date__dow">Вт</span><span class="date__day">17</span><span class="date__month">лист</span></button>
+      <button class="date" type="button"><span class="date__dow">Ср</span><span class="date__day">18</span><span class="date__month">лист</span></button>
+      <button class="date" type="button" disabled><span class="date__dow">Нд</span><span class="date__day">22</span><span class="date__month">лист</span></button>
+    </div>
+    <div class="slots" style="max-width:520px">
+      <button class="slot" type="button">09:00</button>
+      <button class="slot" type="button" disabled>09:30</button>
+      <button class="slot" type="button" aria-pressed="true">10:00</button>
+      <button class="slot" type="button">10:30</button>
+      <button class="slot" type="button">11:00</button>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-cards">
+    <h2 id="sg-cards">Картки</h2>
+    <div class="sg-grid--cards" style="display:grid">
+      <article class="card card--hover doctor-card">
+        <div class="doctor-card__photo"><img src="img/doctors/doctor-1.svg" alt="" width="400" height="300"></div>
+        <div class="card__body">
+          <span class="badge">Терапевт</span>
+          <h3 class="card__title"><a href="#sg-cards">Олена Іваненко</a></h3>
+          <div class="card__meta"><span>Стаж 12 років</span><span class="rating"><svg aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.9</span></div>
+        </div>
+      </article>
+      <article class="card card--hover">
+        <div class="card__body">
+          <div class="service-card__icon"><svg aria-hidden="true"><use href="img/icons.svg#i-syringe"/></svg></div>
+          <span class="card__meta">Профілактика · 20 хв</span>
+          <h3 class="card__title">Вакцинація</h3>
+          <p class="muted" style="margin:0">Комплексні щеплення для котів і собак за календарем.</p>
+          <div class="card__footer"><span class="price"><small>від</small> 350 ₴</span><a class="btn btn--secondary" href="#sg-cards">Записатися</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sg-section" aria-labelledby="sg-alerts">
+    <h2 id="sg-alerts">Повідомлення</h2>
+    <div style="display:grid;gap:1rem;max-width:520px">
+      <div class="alert alert--success" role="status"><svg aria-hidden="true"><use href="img/icons.svg#i-check-circle"/></svg><p>Запис успішно створено!</p></div>
+      <div class="alert alert--error" role="alert"><svg aria-hidden="true"><use href="img/icons.svg#i-alert"/></svg><p>Цей час уже зайнятий. Оберіть інший.</p></div>
+    </div>
+  </section>
+</main>
+<script>
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
+</script>
+</body>
+</html>

@@ -61,3 +61,21 @@ flowchart TD
 ```
 
 Альтернативні входи: зі сторінки лікаря (US-2) і з каталогу послуг (US-4). Ці кроки форми пропускаються, бо лікар чи послуга вже обрані.
+
+## 4. Структура сайту (sitemap)
+
+```mermaid
+flowchart TD
+    Home[Головна /] --> Doctors[Лікарі /doctors]
+    Home --> Services[Послуги /services]
+    Home --> Booking[Запис /booking]
+    Home --> Contacts[Контакти /contacts]
+    Doctors --> Doctor[Лікар /doctors/:id]
+    Doctor --> Booking
+    Services --> Booking
+    Booking --> Success[Підтвердження запису]
+    NotFound[404]
+```
+
+Глобальна навігація (хедер): Лікарі · Послуги · Контакти · кнопка «Записатися» · перемикач теми.
+Футер: контакти, графік роботи, соцмережі, ті самі посилання.

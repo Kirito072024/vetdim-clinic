@@ -71,8 +71,8 @@
             <li class="stepper__item"><span>4 <span class="stepper__label">Ваші дані</span></span></li>
           </ol>
 
-          <fieldset class="step" data-step="1">
-            <legend class="step__title">Оберіть послугу</legend>
+          <fieldset class="form-step" data-step="1">
+            <legend class="form-step__title">Оберіть послугу</legend>
             <div class="options" id="service-options">
               <label class="option"><input type="radio" name="serviceId" value="1" required><span class="option__body"><span class="option__title">Первинний огляд</span><span class="option__meta">Терапія · 30 хв</span></span><span class="option__price">від 400 ₴</span></label>
               <label class="option"><input type="radio" name="serviceId" value="2" required><span class="option__body"><span class="option__title">Вакцинація</span><span class="option__meta">Профілактика · 20 хв</span></span><span class="option__price">від 350 ₴</span></label>
@@ -88,8 +88,8 @@
             <p class="field__error" id="serviceId-error"></p>
           </fieldset>
 
-          <fieldset class="step" data-step="2">
-            <legend class="step__title">Оберіть лікаря</legend>
+          <fieldset class="form-step" data-step="2">
+            <legend class="form-step__title">Оберіть лікаря</legend>
             <div class="options" id="doctor-options">
               <label class="option"><input type="radio" name="doctorId" value="1" required><img class="option__avatar" src="img/doctors/doctor-1.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Олена Іваненко</span><span class="option__meta">Терапевт · стаж 12 років</span></span></label>
               <label class="option"><input type="radio" name="doctorId" value="2" required><img class="option__avatar" src="img/doctors/doctor-2.svg" alt="" width="48" height="48"><span class="option__body"><span class="option__title">Андрій Коваль</span><span class="option__meta">Хірург · стаж 15 років</span></span></label>
@@ -101,13 +101,13 @@
             <p class="field__error" id="doctorId-error"></p>
           </fieldset>
 
-          <fieldset class="step" data-step="3">
-            <legend class="step__title">Оберіть дату і час</legend>
-            <h2 class="step__subtitle">Дата</h2>
+          <fieldset class="form-step" data-step="3">
+            <legend class="form-step__title">Оберіть дату і час</legend>
+            <h2 class="form-step__subtitle">Дата</h2>
             <div class="dates" id="dates" role="group" aria-label="Дата прийому">
               <p class="muted">Спочатку оберіть лікаря.</p>
             </div>
-            <h2 class="step__subtitle">Вільний час</h2>
+            <h2 class="form-step__subtitle">Вільний час</h2>
             <div class="slots" id="slots" role="group" aria-label="Час прийому">
               <p class="muted">Оберіть дату, щоб побачити вільний час.</p>
             </div>
@@ -116,8 +116,8 @@
             <p class="field__error" id="time-error"></p>
           </fieldset>
 
-          <fieldset class="step" data-step="4">
-            <legend class="step__title">Ваші дані</legend>
+          <fieldset class="form-step" data-step="4">
+            <legend class="form-step__title">Ваші дані</legend>
             <div class="form-grid">
               <div class="field">
                 <label class="field__label" for="ownerName">Ваше ім'я <span class="req" aria-hidden="true">*</span></label>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лікарі — ВетДім</title>
+  <meta name="description" content="Команда ветеринарних лікарів клініки ВетДім: терапевти, хірург, дерматолог, стоматолог, офтальмолог. Оберіть свого лікаря та запишіться онлайн.">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Лікарі — ВетДім">
+  <meta property="og:description" content="Команда ветеринарних лікарів клініки ВетДім: терапевти, хірург, дерматолог, стоматолог, офтальмолог. Оберіть свого лікаря та запишіться онлайн.">
+  <meta property="og:locale" content="uk_UA">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="doctors">
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+        <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+        <span class="logo__text">Вет<span>Дім</span></span>
+      </a>
+      <nav class="nav" id="main-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="doctors.html" aria-current="page">Лікарі</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="booking.html"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Записатися</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему">
+          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <button class="icon-btn burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+          <svg class="icon burger__open" aria-hidden="true"><use href="img/icons.svg#i-menu"/></svg>
+          <svg class="icon burger__close" aria-hidden="true"><use href="img/icons.svg#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлібні крихти">
+          <ol><li><a href="index.html">Головна</a></li><li><span aria-current="page">Лікарі</span></li></ol>
+        </nav>
+        <h1 id="page-title">Наші лікарі</h1>
+        <p class="page-hero__lead">Шість фахівців, які знають, як зробити візит спокійним для вас і вашого улюбленця.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight" aria-label="Каталог лікарів">
+      <div class="container">
+        <div class="toolbar">
+          <div class="search">
+            <label class="visually-hidden" for="doctor-search">Пошук лікаря за ім'ям</label>
+            <svg class="icon search__icon" aria-hidden="true"><use href="img/icons.svg#i-search"/></svg>
+            <input class="input search__input" id="doctor-search" type="search" placeholder="Пошук за ім'ям" autocomplete="off">
+          </div>
+          <div class="chips" role="group" aria-label="Фільтр за спеціалізацією" id="specialty-filter">
+            <button class="chip" type="button" aria-pressed="true" data-specialty="">Усі</button>
+            <button class="chip" type="button" aria-pressed="false" data-specialty="Терапевт">Терапевт</button>
+            <button class="chip" type="button" aria-pressed="false" data-specialty="Хірург">Хірург</button>
+            <button class="chip" type="button" aria-pressed="false" data-specialty="Дерматолог">Дерматолог</button>
+            <button class="chip" type="button" aria-pressed="false" data-specialty="Стоматолог">Стоматолог</button>
+            <button class="chip" type="button" aria-pressed="false" data-specialty="Офтальмолог">Офтальмолог</button>
+          </div>
+        </div>
+        <p class="results-count muted" id="results-count" aria-live="polite">Знайдено лікарів: 6</p>
+        <ul class="grid grid--3" id="doctors-list">
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-1.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Терапевт</span>
+                <h2 class="card__title"><a href="doctor.html?id=1">Олена Іваненко</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 12 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.9</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-2.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Хірург</span>
+                <h2 class="card__title"><a href="doctor.html?id=2">Андрій Коваль</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 15 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.8</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-3.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Дерматолог</span>
+                <h2 class="card__title"><a href="doctor.html?id=3">Марія Шевчук</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 8 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>5.0</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-4.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Стоматолог</span>
+                <h2 class="card__title"><a href="doctor.html?id=4">Дмитро Бондар</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 10 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.7</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-5.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Офтальмолог</span>
+                <h2 class="card__title"><a href="doctor.html?id=5">Ірина Мельник</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 7 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.9</span>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="card card--hover doctor-card">
+              <div class="doctor-card__photo"><img src="img/doctors/doctor-6.svg" alt="" width="400" height="300" loading="lazy"></div>
+              <div class="card__body">
+                <span class="badge">Терапевт</span>
+                <h2 class="card__title"><a href="doctor.html?id=6">Тарас Ткаченко</a></h2>
+                <div class="card__meta">
+                  <span>Стаж 5 років</span>
+                  <span class="rating"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg>4.8</span>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+          <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+          <span class="logo__text">Вет<span>Дім</span></span>
+        </a>
+        <p>Ветеринарна клініка, де вашого улюбленця зустрічають як вдома. Турбота, досвід і сучасна медицина.</p>
+        <ul class="socials">
+          <li><a class="icon-btn" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-instagram"/></svg></a></li>
+          <li><a class="icon-btn" href="https://www.facebook.com/" aria-label="Facebook" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-facebook"/></svg></a></li>
+        </ul>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <h2 class="site-footer__title">Сайт</h2>
+        <ul class="site-footer__list">
+          <li><a href="doctors.html">Лікарі</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="booking.html">Запис на прийом</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__title">Контакти</h2>
+        <address class="site-footer__list">
+          <a href="https://maps.google.com/?q=Київ,+вул.+Садова,+12" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-pin"/></svg>м. Київ, вул. Садова, 12</a>
+          <a href="tel:+380441234567"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-phone"/></svg>+38 (044) 123-45-67</a>
+          <a href="mailto:hello@vetdim.ua"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-mail"/></svg>hello@vetdim.ua</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Графік роботи</h2>
+        <dl class="hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–20:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Нд</dt><dd>вихідний</dd></div>
+        </dl>
+        <p class="site-footer__emergency"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg>Екстрена допомога — цілодобово за телефоном</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© 2026 ВетДім. Навчальний проєкт.</p>
+      <p><a href="styleguide.html">Дизайн-система</a></p>
+    </div>
+  </footer>
+</body>
+</html>

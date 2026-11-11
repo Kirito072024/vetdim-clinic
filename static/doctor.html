@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Олена Іваненко — Терапевт | ВетДім</title>
+  <meta name="description" content="Олена Іваненко, терапевт ветеринарної клініки ВетДім. Досвід, послуги, графік прийому та онлайн-запис.">
+  <meta name="theme-color" content="#0f766e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Олена Іваненко — Терапевт | ВетДім">
+  <meta property="og:description" content="Олена Іваненко, терапевт ветеринарної клініки ВетДім. Досвід, послуги, графік прийому та онлайн-запис.">
+  <meta property="og:locale" content="uk_UA">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="doctor">
+  <a class="skip-link" href="#main">Перейти до вмісту</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+        <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+        <span class="logo__text">Вет<span>Дім</span></span>
+      </a>
+      <nav class="nav" id="main-nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="doctors.html" aria-current="page">Лікарі</a></li>
+          <li><a class="nav__link" href="services.html">Послуги</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакти</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="booking.html"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Записатися</a>
+      </nav>
+      <div class="site-header__actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Увімкнути темну тему">
+          <svg class="icon theme-toggle__moon" aria-hidden="true"><use href="img/icons.svg#i-moon"/></svg>
+          <svg class="icon theme-toggle__sun" aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>
+        </button>
+        <button class="icon-btn burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+          <svg class="icon burger__open" aria-hidden="true"><use href="img/icons.svg#i-menu"/></svg>
+          <svg class="icon burger__close" aria-hidden="true"><use href="img/icons.svg#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumbs breadcrumbs--page" aria-label="Хлібні крихти">
+        <ol><li><a href="index.html">Головна</a></li><li><a href="doctors.html">Лікарі</a></li><li><span aria-current="page" data-field="name">Олена Іваненко</span></li></ol>
+      </nav>
+      <article class="doctor" id="doctor">
+        <div class="doctor__photo">
+          <img src="img/doctors/doctor-1.svg" alt="Портрет: Олена Іваненко" width="400" height="300" data-field="photo">
+        </div>
+        <div class="doctor__info">
+          <span class="badge" data-field="specialty">Терапевт</span>
+          <h1 data-field="name">Олена Іваненко</h1>
+          <ul class="doctor__facts">
+            <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-award"/></svg><span>Стаж <strong data-field="experience">12 років</strong></span></li>
+            <li><svg class="icon icon--star" aria-hidden="true"><use href="img/icons.svg#i-star"/></svg><span>Рейтинг <strong data-field="rating">4.9</strong></span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-graduation"/></svg><span data-field="education">Національний університет біоресурсів і природокористування України, 2012</span></li>
+          </ul>
+          <p class="doctor__bio" data-field="bio">Головний лікар клініки. Знайде підхід до найнеспокійнішого пацієнта: проводить первинні огляди, складає план вакцинації та веде тварин з хронічними захворюваннями.</p>
+
+          <section class="doctor__block" aria-labelledby="doc-services">
+            <h2 id="doc-services">Послуги лікаря</h2>
+            <ul class="service-list" data-field="services">
+              <li><span>Первинний огляд</span><span class="service-list__price">від 400 ₴</span></li>
+              <li><span>Вакцинація</span><span class="service-list__price">від 350 ₴</span></li>
+              <li><span>Чипування</span><span class="service-list__price">від 450 ₴</span></li>
+              <li><span>УЗД черевної порожнини</span><span class="service-list__price">від 700 ₴</span></li>
+              <li><span>Аналіз крові</span><span class="service-list__price">від 450 ₴</span></li>
+            </ul>
+          </section>
+
+          <section class="doctor__block" aria-labelledby="doc-schedule">
+            <h2 id="doc-schedule">Графік прийому</h2>
+            <ul class="week" data-field="schedule">
+              <li class="week__day is-active"><abbr title="Приймає">Пн</abbr></li>
+              <li class="week__day is-active"><abbr title="Приймає">Вт</abbr></li>
+              <li class="week__day is-active"><abbr title="Приймає">Ср</abbr></li>
+              <li class="week__day is-active"><abbr title="Приймає">Чт</abbr></li>
+              <li class="week__day is-active"><abbr title="Приймає">Пт</abbr></li>
+              <li class="week__day"><abbr title="Не приймає">Сб</abbr></li>
+              <li class="week__day"><abbr title="Не приймає">Нд</abbr></li>
+            </ul>
+            <p class="muted">Час прийому: 09:00–18:00</p>
+          </section>
+
+          <div class="doctor__cta">
+            <a class="btn btn--primary btn--lg btn--block" href="booking.html?doctor=1" data-field="cta"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Записатися до лікаря</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo" href="index.html" aria-label="ВетДім — на головну">
+          <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-paw"/></svg></span>
+          <span class="logo__text">Вет<span>Дім</span></span>
+        </a>
+        <p>Ветеринарна клініка, де вашого улюбленця зустрічають як вдома. Турбота, досвід і сучасна медицина.</p>
+        <ul class="socials">
+          <li><a class="icon-btn" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-instagram"/></svg></a></li>
+          <li><a class="icon-btn" href="https://www.facebook.com/" aria-label="Facebook" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-facebook"/></svg></a></li>
+        </ul>
+      </div>
+      <nav aria-label="Навігація у футері">
+        <h2 class="site-footer__title">Сайт</h2>
+        <ul class="site-footer__list">
+          <li><a href="doctors.html">Лікарі</a></li>
+          <li><a href="services.html">Послуги</a></li>
+          <li><a href="booking.html">Запис на прийом</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="site-footer__title">Контакти</h2>
+        <address class="site-footer__list">
+          <a href="https://maps.google.com/?q=Київ,+вул.+Садова,+12" rel="noopener"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-pin"/></svg>м. Київ, вул. Садова, 12</a>
+          <a href="tel:+380441234567"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-phone"/></svg>+38 (044) 123-45-67</a>
+          <a href="mailto:hello@vetdim.ua"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-mail"/></svg>hello@vetdim.ua</a>
+        </address>
+      </div>
+      <div>
+        <h2 class="site-footer__title">Графік роботи</h2>
+        <dl class="hours">
+          <div><dt>Пн–Пт</dt><dd>09:00–20:00</dd></div>
+          <div><dt>Сб</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Нд</dt><dd>вихідний</dd></div>
+        </dl>
+        <p class="site-footer__emergency"><svg class="icon" aria-hidden="true"><use href="img/icons.svg#i-heart"/></svg>Екстрена допомога — цілодобово за телефоном</p>
+      </div>
+    </div>
+    <div class="container site-footer__bottom">
+      <p>© 2026 ВетДім. Навчальний проєкт.</p>
+      <p><a href="styleguide.html">Дизайн-система</a></p>
+    </div>
+  </footer>
+</body>
+</html>

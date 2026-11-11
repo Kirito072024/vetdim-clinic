@@ -1,0 +1,14 @@
+{
+  "name": "vetdim-e2e",
+  "private": true,
+  "description": "Наскрізні сценарії в headless-браузері (Puppeteer + Edge/Chrome)",
+  "scripts": {
+    "booking": "node booking-flow.js",
+    "checks": "node checks.js",
+    "overflow": "node overflow.js",
+    "all": "node booking-flow.js && node checks.js && node overflow.js"
+  },
+  "dependencies": {
+    "puppeteer-core": "^24.0.0"
+  }
+}

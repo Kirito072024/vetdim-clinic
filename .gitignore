@@ -26,3 +26,4 @@ desktop.ini
 # Runtime data (записи на прийом)
 server/data/appointments.json
 server/data/*.tmp
+e2e/*.png

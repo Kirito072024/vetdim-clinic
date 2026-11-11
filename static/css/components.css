@@ -468,6 +468,10 @@
   flex: 1;
 }
 
+.card__body > .badge {
+  align-self: flex-start;
+}
+
 .card__title {
   margin: 0;
   font-size: 1.125rem;

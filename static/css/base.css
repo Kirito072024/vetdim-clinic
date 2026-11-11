@@ -103,8 +103,18 @@ textarea {
   border-radius: 4px;
 }
 
+/* Програмний фокус (tabindex=-1) не потребує рамки */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
 ::selection {
   background: var(--color-primary-soft);
+}
+
+/* Атрибут hidden має перемагати display компонентів */
+[hidden] {
+  display: none !important;
 }
 
 /* ---- Утиліти ---- */
